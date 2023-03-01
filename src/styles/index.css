@@ -19,6 +19,18 @@ body {
     background-color: var(--gris);
 
 }
+table{
+    text-align: center;
+}
+thead{
+    border-bottom: solid 1px #d9dadd ;
+}
+td {
+    margin-top: 1rem;
+    border-bottom: solid 1px #d9dadd ;
+    padding: 1rem 0;
+}
+
 .submenu{
     position: relative;
 }
@@ -31,7 +43,7 @@ body {
     position: absolute;
     right: 0;
     top: 100%;
-    z-index: 1;
+    z-index: 10;
     padding: 20px;
     background-color: white;
     min-height: 400px;
@@ -90,7 +102,26 @@ body {
     font-size: 1rem;
     text-transform: capitalize;
 }
-
+.borrar-curso{
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.mensaje{
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    z-index: 10;
+    display: inline;
+    padding: 1rem ;
+    background-color: var(--azulRey);
+    color: white;
+    border-radius: 5px;
+    opacity: 0.9;
+}
 /* BOTONES */
 .bton {
     margin-top: 20px;

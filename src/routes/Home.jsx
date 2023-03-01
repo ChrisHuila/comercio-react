@@ -1,14 +1,14 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useContext, Fragment } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import SeccionesProducto from "../components/home/producto/SeccionesProducto";
+import { CarritoContext } from '../context/carritoContext';
 import '../styles/index.css';
 
 
 const Home  = () => {
 
-
-    
+   const {mensaje} = useContext(CarritoContext);
     const bodyDataModule = [
         {id:1 , nombre: 'pc',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/mujer-negocios-que-trabajan-computadora-portatil_1388-67.jpg?w=740&t=st=1677514541~exp=1677515141~hmac=c709b5edd4000f60a1a0012b5fa05d70cb3649a5aafdf4ff40057a8cf7273a6c' },
         {id:2 , nombre: 'pc',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/mujer-negocios-que-trabajan-computadora-portatil_1388-67.jpg?w=740&t=st=1677514541~exp=1677515141~hmac=c709b5edd4000f60a1a0012b5fa05d70cb3649a5aafdf4ff40057a8cf7273a6c' },
@@ -26,6 +26,10 @@ const Home  = () => {
 
     const dataCategories = ['tecnologia', 'moda', 'electrodomesticos']
 
+
+    const mostrarMensaje = () => {
+
+    }
     
     return ( 
         <Fragment>
@@ -40,7 +44,7 @@ const Home  = () => {
             />
                
            </div>
-           
+           {mensaje ? <p className='mensaje'>Agregado al Carrito <i className="bi bi-cart4"></i></p> :null}
            <Footer/>
         
         </Fragment>

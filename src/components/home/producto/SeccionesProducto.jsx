@@ -17,7 +17,6 @@ const SeccionesProducto = ({bodyDataModule, dataCategories}) => {
     const [width, setWidth] = useState(getWidth());
 
     useEffect(() => {
-    console.log(bodyDataModule)
 
         // para limpiar el timeout
         let timeoutId = null;
