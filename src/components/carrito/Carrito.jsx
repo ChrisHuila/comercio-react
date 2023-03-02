@@ -1,5 +1,3 @@
-import { useContext, useState, useEffect } from "react";
-import { CarritoContext } from "../../context/carritoContext";
 import useCarrito from "../../hook/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
 
