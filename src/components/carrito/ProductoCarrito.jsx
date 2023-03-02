@@ -1,9 +1,10 @@
 
-const ProductoCarrito = ({articulo, eliminaProducto}) => {
+const ProductoCarrito = ({articulo, eliminaProducto,}) => {
     // Elimina el producto
     const eliminarProducto = () => {
         eliminaProducto(articulo);
     } 
+
     return (
         <tr>
             <td><img className=" " style={{width: '90px'}} src={articulo.imagen} alt={articulo.nombre} /></td>            
@@ -16,7 +17,7 @@ const ProductoCarrito = ({articulo, eliminaProducto}) => {
                 className="borrar-curso"
                 onClick={eliminarProducto}
                 >X</a>
-            </td>
+            </td>    
         </tr>
       );
 }

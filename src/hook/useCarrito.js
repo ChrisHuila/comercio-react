@@ -2,8 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import { CarritoContext } from "../context/carritoContext";
 
 const useCarrito = () => {
-      // utiliza los datos del context
-      const {cambio, producto, agregarCarrito} = useContext(CarritoContext);
+      // utiliza los datos del context (toma el producto agregado)
+    const {cambio, producto, agregarCarrito} = useContext(CarritoContext);
           // muestra los productos de localStorage
     let productosIniciales = JSON.parse(localStorage.getItem('productos'));
     if(!productosIniciales){
@@ -16,7 +16,7 @@ const useCarrito = () => {
         notificacionesIniciales = 1; // se agrega 1 para que la variable pueda existir
     }
     // state del componente
-    const [carrito, agregarProducto] = useState(productosIniciales);
+    const [carrito, actualizarCarrito] = useState(productosIniciales);
     const [notificacion , agregarNotificacion] = useState(notificacionesIniciales);
 
   
@@ -35,11 +35,11 @@ const useCarrito = () => {
                 }
 
             })
-            agregarProducto(cantidadCarrito);
+            actualizarCarrito(cantidadCarrito);
         }else if(producto.cantidad === 1){
             // Elimina del carrito
             const carritoActualizado  = carrito.filter(articulo => articulo.id !== producto.id);
-            agregarProducto(carritoActualizado);
+            actualizarCarrito(carritoActualizado);
         }
       
         let numero = notificacion - 1;
@@ -55,10 +55,8 @@ const useCarrito = () => {
         }
         // Valida notificaciones 
         if(notificacionesIniciales){
-            console.log('Existe')
             localStorage.setItem('notificaciones', JSON.stringify(notificacion));
         }else{
-            console.log('no Existe')
             localStorage.setItem('notificaciones', JSON.stringify(1));
         }
     }
@@ -78,11 +76,11 @@ const useCarrito = () => {
                 }
 
             })
-            agregarProducto(cantidadCarrito);
+            actualizarCarrito(cantidadCarrito);
 
         }else {
             // agregamos el producto
-            agregarProducto(
+            actualizarCarrito(
                 [...carrito, producto]
             )
         }
@@ -117,7 +115,13 @@ const useCarrito = () => {
       
     }, [cambio, carrito, notificacion])
 
-    return [carrito, notificacion, eliminaProducto ];
+    return {
+        carrito, 
+        notificacion,
+        eliminaProducto,
+        actualizarCarrito, 
+        agregarNotificacion
+    };
 }
  
 export default useCarrito;

@@ -5,6 +5,7 @@ import {
 import Home from "./routes/Home";
 import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
+import PrincipalCarrito from "./routes/PrincipalCarrito";
 
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
     {
       path: "/nueva-cuenta",
       element: <NuevaCuenta/>,
+    },
+    {
+      path: "/carrito",
+      element: <PrincipalCarrito />,
     }
       
   ])

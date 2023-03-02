@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import useCarrito from "../../hook/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
 
 const Carrito = () => {   
     
     // Utiliza el hook useCarrito
-    const [carrito, notificacion, eliminaProducto] = useCarrito();
+    const {carrito, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion} = useCarrito();
 
     return (        
         <ul style={{listStyle: "none", margin: "0", padding: "0"}}>
             <li className="submenu">
-                <a className="nav-link fw-bold position-relative" href="#">
+                <Link to={'/carrito'} className="nav-link fw-bold position-relative" href="#">
                     <i className="bi bi-cart4">Carrito</i>
                     {notificacion > 1 
                     ? 
@@ -19,7 +20,10 @@ const Carrito = () => {
                             <span className="visually-hidden">unread messages</span>
                         </span>
                     :null}                    
-                </a>
+                </Link>
+                {/* <Link to={'/nueva-cuenta'} className='enlace-cuenta'>
+                    Obtener Cuenta
+                </Link> */}
                 <div className="carrito">
                     <table>
                         <thead>
@@ -46,7 +50,7 @@ const Carrito = () => {
                         <button 
                         className="btn btn-primary mt-3" 
                         type="button"
-                        onClick={() => (agregarProducto([]), agregarNotificacion( 0 ))}
+                        onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
                         >Vaciar carrito</button>
                     </div>
                 </div>
