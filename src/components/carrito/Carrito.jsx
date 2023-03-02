@@ -15,7 +15,7 @@ const Carrito = () => {
     // Muestra las notificacion de localStorage
     let notificacionesIniciales = JSON.parse(localStorage.getItem('notificaciones'));
     if(!notificacionesIniciales){
-        notificacionesIniciales = 0;
+        notificacionesIniciales = 1; // se agrega 1 para que la variable pueda existir
     }
     // state del componente
     const [carrito, agregarProducto] = useState(productosIniciales);
@@ -57,9 +57,11 @@ const Carrito = () => {
         }
         // Valida notificaciones 
         if(notificacionesIniciales){
+            console.log('Existe')
             localStorage.setItem('notificaciones', JSON.stringify(notificacion));
         }else{
-            localStorage.setItem('notificaciones', JSON.stringify(0));
+            console.log('no Existe')
+            localStorage.setItem('notificaciones', JSON.stringify(1));
         }
     }
 
@@ -122,10 +124,11 @@ const Carrito = () => {
             <li className="submenu">
                 <a className="nav-link fw-bold position-relative" href="#">
                     <i className="bi bi-cart4">Carrito</i>
-                    {notificacion > 0 
+                    {notificacion > 1 
                     ? 
                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {notificacion}+
+                            {/* Se le quita 1 porque es su valor inicial */}
+                            {notificacion - 1}+
                             <span className="visually-hidden">unread messages</span>
                         </span>
                     :null}                    

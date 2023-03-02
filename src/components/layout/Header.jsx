@@ -1,7 +1,6 @@
 
 import NavLogin from '../auth/NavLogin';
-import FormularioBusqueda from '../home/producto/FormularioBusqueda';
-
+import FormularioBusqueda from "../producto/FormularioBusqueda";
 
 
 const Header = () => {

@@ -1,7 +1,8 @@
 import { useContext, Fragment } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import SeccionesProducto from "../components/home/producto/SeccionesProducto";
+import Notificacion from '../components/helpers/Notificacion';
+import SeccionesProducto from "../components/producto/SeccionesProducto";
 import { CarritoContext } from '../context/carritoContext';
 import '../styles/index.css';
 
@@ -25,11 +26,7 @@ const Home  = () => {
     ]
 
     const dataCategories = ['tecnologia', 'moda', 'electrodomesticos']
-
-
-    const mostrarMensaje = () => {
-
-    }
+   
     
     return ( 
         <Fragment>
@@ -44,7 +41,8 @@ const Home  = () => {
             />
                
            </div>
-           {mensaje ? <p className='mensaje'>Agregado al Carrito <i className="bi bi-cart4"></i></p> :null}
+            {mensaje ? <Notificacion tipo='agregado' mensaje='Agregado al Carrito' />:null}
+            
            <Footer/>
         
         </Fragment>
