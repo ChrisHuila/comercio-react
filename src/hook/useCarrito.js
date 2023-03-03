@@ -18,7 +18,7 @@ const useCarrito = () => {
     // state del componente
     const [carrito, actualizarCarrito] = useState(productosIniciales);
     const [notificacion , agregarNotificacion] = useState(notificacionesIniciales);
-
+    const [valortotal, guardarValorTotal] = useState(0);
   
 
     // elimina un producto del carrito  
@@ -87,6 +87,8 @@ const useCarrito = () => {
        
         let numero = notificacion + 1;
         agregarNotificacion( numero )
+
+        guardarValorTotal(valortotal + parseInt(producto.precio));
         // coloca el valor por defecto para poder agregar otro producto
         agregarCarrito({})
     }

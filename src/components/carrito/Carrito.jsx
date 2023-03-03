@@ -20,10 +20,7 @@ const Carrito = () => {
                             <span className="visually-hidden">unread messages</span>
                         </span>
                     :null}                    
-                </Link>
-                {/* <Link to={'/nueva-cuenta'} className='enlace-cuenta'>
-                    Obtener Cuenta
-                </Link> */}
+                </Link>            
                 <div className="carrito">
                     <table>
                         <thead>

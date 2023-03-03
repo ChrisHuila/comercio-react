@@ -14,7 +14,7 @@ const PrincipalCarrito = () => {
                     <th>Nombre</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
-                    
+                    <th>total</th>
                 </tr>
             </thead>
             <tbody>                            

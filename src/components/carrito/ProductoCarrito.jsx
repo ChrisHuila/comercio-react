@@ -11,6 +11,7 @@ const ProductoCarrito = ({articulo, eliminaProducto,}) => {
             <td>{articulo.nombre}</td>
             <td>{`$ ${articulo.precio}`}</td>
             <td>{articulo.cantidad}</td>
+            
             <td>
                 <a 
                 href="#" 

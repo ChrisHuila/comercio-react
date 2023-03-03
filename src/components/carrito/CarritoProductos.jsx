@@ -16,6 +16,7 @@ const CarritoProductos = ({articulo, carrito, eliminaProducto, actualizarCarrito
         })
         actualizarCarrito(carritoActualizado);
     }
+  
     return (
         <tr>
             <td><img className=" " style={{width: '90px'}} src={articulo.imagen} alt={articulo.nombre} /></td>            
@@ -47,7 +48,8 @@ const CarritoProductos = ({articulo, carrito, eliminaProducto, actualizarCarrito
                         </a>                   
                     </li>
                 </ul>
-            </td>           
+            </td>            
+            <td>{`${articulo.cantidad * parseInt(articulo.precio) }`}</td>         
         </tr>
       );
 }
