@@ -4,13 +4,14 @@ import BotonAgregar from "../helpers/BotonAgregar";
 
 
 const Articulo = ({articulo}) => {
-
+    // style={{Width: '100%', height: '100%'}}
+    // style={{height: '200px'}}
     return (
-            <div className="card mb-3" style={{Width: '100%', height: '100%'}}>
+            <div className="card mb-3" style={{maxWidth: '100%'}} >
                 <h2 className="card-header headingCard">{articulo.nombre}</h2>
                 <div className="d-flex justify-content-center slide">
                     <Link to={`/Producto/${articulo.nombre}/${articulo.id}`} >
-                        <img className=" " style={{height: '200px'}} src={articulo.imagen} alt={articulo.nombre} /> 
+                        <img className=" "  style={{maxWidth: '100%'}} src={articulo.imagen} alt={articulo.nombre} /> 
                     </Link> 
                 </div>
 

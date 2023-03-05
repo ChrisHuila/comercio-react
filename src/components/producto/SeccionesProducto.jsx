@@ -50,25 +50,28 @@ const SeccionesProducto = ({bodyDataModule, dataCategories}) => {
             {dataCategories.map( (categoria, i) => (
                 <div key={i} className="row mt-3">
                     <h2 className=" headingCategoria">{categoria}</h2>
-                    <Swiper                    
-                    navigation={true}
-                    pagination={true} 
-                    modules={[Navigation, Pagination]}
-                    spaceBetween={10}
-                    slidesPerView={getNumber()}
-                    // onSlideChange={() => console.log('slide change')}
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    >       
-                        <div className=" mt-3">
-                            {bodyDataModule.map( articulo => ( articulo.categoria === categoria
-                            ?<SwiperSlide key={articulo.id}>
-                                <Articulo                                        
-                                articulo={articulo}
-                                />
-                            </SwiperSlide>
-                            : null))}
-                        </div>                      
-                    </Swiper>
+                   
+                        <Swiper                    
+                        navigation={true}
+                        pagination={true} 
+                        modules={[Navigation, Pagination]}
+                        spaceBetween={10}
+                        slidesPerView={getNumber()}
+                        // onSlideChange={() => console.log('slide change')}
+                        // onSwiper={(swiper) => console.log(swiper)}
+                        >       
+                            <div className=" mt-3">
+                                {bodyDataModule.map( articulo => ( articulo.categoria === categoria
+                                ?<SwiperSlide key={articulo.id}>
+                                    <Articulo                                        
+                                    articulo={articulo}
+                                    />
+                                </SwiperSlide>
+                                : null))}
+                            </div>                      
+                        </Swiper>
+
+                    
                     <div className=" d-flex justify-content-end mt-2">
                         <Link to={'/'} className='btn btn-sm btn-dark mb-3 '>
                             Ver todos...
