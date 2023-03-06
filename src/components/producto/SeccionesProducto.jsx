@@ -25,22 +25,27 @@ const SeccionesProducto = ({bodyDataModule, dataCategories}) => {
             //previene la ejecucion antes del timeout
             clearTimeout(timeoutId);
             // cambia el estado despues de 100milisegundos
-            timeoutId = setTimeout(() => setWidth(getWidth()), 150);
+            timeoutId = setTimeout(() => 
+            setWidth(getWidth()), 150);
         }
-
+   
         // agregamos el listener rezise
         window.addEventListener('resize', resizeListener);
 
     },[])
 
     const getNumber = () => {
-        if (width <= 600) {
-            return 1
+        
+        if(width > 992){
+            return 5;
+        }else if (width > 792) {
+            return 4;
+        }else if (width > 576){
+            return 2;
+        } else{
+            return 1;
         }
-        if (width <= 950) {
-            return 2
-        }
-        return 3
+
         
     }
 
