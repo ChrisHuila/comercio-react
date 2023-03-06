@@ -6,7 +6,7 @@
     --headingFont:'Raleway', sans-serif;
     --textFont:  'Roboto', sans-serif;
 }
-
+/* Globales */
 html {
     height: 100%;
 }
@@ -19,6 +19,117 @@ body {
     background-color: var(--gris);
 
 }
+/* Utilidades */
+.no-margin{
+    margin: 0;
+}
+.no-padding{
+    padding: 0;
+}
+
+/*----------- Header----------- */
+.header{
+    background-color: var(--azulRey);
+}
+.header-container{
+    display: flex;
+    flex-direction: column;
+}
+.header-login {
+    display: flex;
+    justify-content: end;
+
+}
+@media (min-width: 992px ) {
+    .header-container{
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+    .header-login{
+        flex: 0 0 207px;
+    }
+   .header-top{
+   padding: 1rem 0;
+    flex: 1;
+   }
+}
+.header-top {
+    padding-bottom: 1rem;
+    flex-direction: column;
+    
+}
+@media (min-width: 768px) {
+    .header-top{
+        display: flex;
+        flex-direction: row;
+    }
+}
+.heading-font{
+    font-family: var(--headingFont);
+    font-weight: 900;
+    color: var(--gris);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    
+    padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .form-busqueda{
+        width: 60%;
+    }
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    
+}
+.form-div-busqueda:first-child {
+    width: 80%;
+}
+.form-div-busqueda input[type="text"]{
+    width: 100%;
+    border: 1px solid var(--gris);
+    border-radius: .4rem 0 0 .4rem;
+    padding: 0.3rem ;
+}
+
+/* Botones */
+.bton {
+    margin-top: 20px;
+    font-family: var(--headingFont);
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+    transition: background-color .3s ease;
+}
+.bton:hover {
+    cursor: pointer;
+    
+}
+.btn-primario{
+    background-color: var(--azulRey);
+    color: var(--blanco)
+}
+
+.bton-block {
+    display: block;
+    width: 100%;
+}
+.bton--busqueda{
+    margin: 0;
+    padding: 0 .5rem;
+    border-radius: 0 .4rem .4rem 0;
+    background-color: #DE3C4B;
+    color: var(--blanco);
+    height: 100%;
+    font-weight: 400;
+}
+
 table{
     text-align: center;
 }
@@ -124,7 +235,7 @@ td {
 }
 
 /* BOTONES */
-.bton {
+/* .bton {
     margin-top: 20px;
     font-family: var(--headingFont);
     padding: 1rem;
@@ -137,23 +248,23 @@ td {
 .bton:hover {
     cursor: pointer;
     
-}
-.btn-primario {
+} */
+/* .btn-primario {
     background-color: var(--azulRey);
     color: var(--blanco);
 }
 .bton-block {
     display: block;
     width: 100%;
-}
+} */
 
-.header{
+/* .header{
     background-image: url(./img/banner.jpg);
     height: 35rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-}
+} */
 .form-usuario {
     background-color: var(--verdeOliva);
     height: 100vh;

@@ -1,14 +1,15 @@
 
 const FormularioBusqueda = () => {
     return(
-        <form>
-            <div className="row  justify-content-md-center">
-                <div className="form-group col-md-6  mt-1">
-                    <input type="text" className="form-control" placeholder="Busca por Articulo o por Categoría" />
-                </div>    
-                <div className="form-group col-md-1 mt-1 d-flex justify-content-end ">
+        <form className="form-busqueda">
+            <div className="form-container">
+                <div className="form-div-busqueda">
+                    <input type="text" className="input-busqueda" placeholder="Busca por Articulo o por Categoría" />
+                </div> 
+
+                <div className="form-div-busqueda ">
                     <input 
-                    type="submit" className="btn btn-danger btn-block"
+                    type="submit" className="bton bton--busqueda"
                     value='Buscar'
                      />
                 </div>

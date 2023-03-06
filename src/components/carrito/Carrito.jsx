@@ -10,7 +10,7 @@ const Carrito = () => {
     return (        
         <ul style={{listStyle: "none", margin: "0", padding: "0"}}>
             <li className="submenu">
-                <Link to={'/carrito'} className="nav-link fw-bold position-relative" href="#">
+                <Link to={'/carrito'} className="nav-link fw-bold text-white position-relative" href="#">
                     <i className="bi bi-cart4">Carrito</i>
                     {notificacion > 1 
                     ? 

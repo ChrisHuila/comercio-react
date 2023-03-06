@@ -4,11 +4,11 @@ import Carrito from "../carrito/Carrito";
 
 const NavLogin = () => {
     return ( 
-      <nav className="navbar navbar-expand pb-3 mt-1">
+      <nav className="navbar navbar-expand ">
         <div className="collapse navbar-collapse" >
           <div className="navbar-nav">
-            <a className="nav-link fw-bold fst-italic" href="#">Sign in </a>
-            <Link to={'/Login'}  className="nav-link fw-bold fst-italic">
+            <a className="nav-link fw-bold fst-italic text-white" href="#">Sign in </a>
+            <Link to={'/Login'}  className="nav-link fw-bold fst-italic text-white">
               Log in
             </Link>            
             <Carrito />
