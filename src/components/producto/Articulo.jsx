@@ -12,22 +12,23 @@ const Articulo = ({articulo}) => {
                     
                 </div>
 
-                <div className="card-body  position-relative mb-3 " >
-                    {/* <p className="card-text">{articulo.comentario.slice(0, 90)} ...</p> */}
+                <div className="card-body card-body__contenedor" >
                    
-                    <h3 className="card-descuento__texto">60% off envio gratis <span className="card-descuento__precio"> {`$${(parseInt(articulo.precio)*2.5)}`} </span></h3> 
+                    <h3 className="card-descuento__texto">60% off envio gratis<i className="bi bi-lightning-fill"></i> <span className="card-descuento__precio"> {`$${(parseInt(articulo.precio)*2.5)}`} </span></h3>
+
                     <h4 className="headingPrice card-precio">Precio: <span className="text-success-emphasis"> {`$${parseInt(articulo.precio)}`} </span></h4> 
-                    {/* <div className=" position-absolute bottom-0 end-0">                          
+
+                    <div className="card-botones">                          
                             <BotonAgregar 
                                 articulo={articulo}
-                                estilo="btn btn-danger btn-sm me-2"
+                                estilo="btn btn-outline-secondary btn-sm"
                             />
 
-                            <Link to={`/Producto/${articulo.nombre}/${articulo.id}`} className='btn btn-danger btn-sm  me-2'>
+                            <Link to={`/Producto/${articulo.nombre}/${articulo.id}`} className='enlace-cuenta'>
                                 ver mas
                             </Link>                
 
-                        </div>  */}
+                    </div> 
                 </div>
               
             </div>
