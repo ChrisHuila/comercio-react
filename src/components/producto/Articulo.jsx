@@ -3,22 +3,20 @@ import { Link } from "react-router-dom";
 import BotonAgregar from "../helpers/BotonAgregar";
 
 
-const Articulo = ({articulo}) => {
-    // style={{Width: '100%', height: '100%'}}
-    // style={{height: '200px'}}
+const Articulo = ({articulo}) => {    
     return (
-            <div className="card mb-3" style={{maxWidth: '100%'}} >
-                <h2 className="card-header headingCard">{articulo.nombre}</h2>
-                <div className="d-flex justify-content-center slide">
-                    {/* <Link to={`/Producto/${articulo.nombre}/${articulo.id}`} > */}
-                    <Link to={`/`} >
-                        <img className=" "  style={{maxWidth: '100%'}} src={articulo.imagen} alt={articulo.nombre} /> 
-                    </Link> 
+            <div className="card card-contenedor" >
+                <h2 className="card-header card-header__font">{articulo.nombre}</h2>
+                <div className="">
+                        <img className="card-header__img"src={articulo.imagen} alt={articulo.nombre} /> 
+                    
                 </div>
 
-                <div className="card-body position-relative mb-3 slide2" >
+                <div className="card-body  position-relative mb-3 " >
                     {/* <p className="card-text">{articulo.comentario.slice(0, 90)} ...</p> */}
-                    <h4 className="headingPrice">Precio: <span className="text-success-emphasis"> {`$${parseInt(articulo.precio)}`} </span></h4> 
+                   
+                    <h3 className="card-descuento__texto">60% off envio gratis <span className="card-descuento__precio"> {`$${(parseInt(articulo.precio)*2.5)}`} </span></h3> 
+                    <h4 className="headingPrice card-precio">Precio: <span className="text-success-emphasis"> {`$${parseInt(articulo.precio)}`} </span></h4> 
                     {/* <div className=" position-absolute bottom-0 end-0">                          
                             <BotonAgregar 
                                 articulo={articulo}
