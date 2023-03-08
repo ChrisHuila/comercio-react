@@ -8,10 +8,15 @@ const FormularioBusqueda = () => {
                 </div> 
 
                 <div className="form-div-busqueda ">
-                    <input 
+                    {/* <input 
                     type="submit" className="bton bton--busqueda"
                     value='Buscar'
-                     />
+                     /> */}
+                     <button
+                        type="submit" className="bton bton--busqueda"
+                     >
+                        <i className="bi bi-search"></i>
+                     </button>
                 </div>
             </div>
         </form>
