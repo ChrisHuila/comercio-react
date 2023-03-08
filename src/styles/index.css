@@ -2,6 +2,7 @@
     --blanco: #ffffff;
     --gris: #e6e5e5;
     --grisOscuro: #87878a;
+    --prueba: #170947a9;
     --azulRey: #2f3848;
     --verdeOliva:  #3D4C53;
     --verdeClaro: #417932f5;
@@ -28,10 +29,14 @@ body {
 .no-padding{
     padding: 0;
 }
-
+/*----------------- Footer--------------------- */
+.footer{
+    background-color: var(--prueba);
+}
 /*----------- Header----------- */
 .header{
-    background-color: var(--azulRey);
+    background-color: var(--prueba);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
 }
 .header-container{
     display: flex;
@@ -64,6 +69,7 @@ body {
     .header-top{
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
     }
 }
 .heading-font{
@@ -81,6 +87,7 @@ body {
     .form-busqueda{
         width: 60%;
     }
+    
 }
 .form-container{
     display: flex;
@@ -89,27 +96,29 @@ body {
 }
 .form-div-busqueda:first-child {
     width: 80%;
+    text-align: end;
 }
+
 .form-div-busqueda input[type="text"]{
-    width: 100%;
+    width: 95%;
     border: 1px solid var(--gris);
-    border-radius: .4rem 0 0 .4rem;
-    padding: 0.3rem ;
+    border-radius: 1rem 0 0 1rem;
+    padding: 0.3rem 0.8rem ;
 }
-/* ------------------------------------BANNER---------------------------------- */
-.banner{
-    /* width: 100%; */
-    /* height: 20rem; */
-}
-.portadas{
-    /* max-width: 100%; */
+.form-div-busqueda input[type="text"]:focus {
+    outline: 2px solid rgb(1, 112, 248) ;
     width: 100%;
-    /* height: 100%; */
+}
+
+/* ------------------------------------BANNER---------------------------------- */
+
+.portadas{
+    width: 100%;
     height: 22rem;
-    
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 .portada-1{
     background-image: url(./img/banner1.jpg);
@@ -240,7 +249,7 @@ body {
 .bton--busqueda{
     margin: 0;
     padding: 0 .5rem;
-    border-radius: 0 .4rem .4rem 0;
+    border-radius: 0 1rem 1rem 0;
     background-color: #DE3C4B;
     color: var(--blanco);
     height: 100%;
