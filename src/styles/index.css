@@ -2,7 +2,7 @@
     --blanco: #ffffff;
     --gris: #e6e5e5;
     --grisOscuro: #87878a;
-    --prueba: #170947a9;
+    --rojoClaro: #ad3047c8;
     --azulRey: #2f3848;
     --verdeOliva:  #3D4C53;
     --verdeClaro: #417932f5;
@@ -31,11 +31,11 @@ body {
 }
 /*----------------- Footer--------------------- */
 .footer{
-    background-color: var(--prueba);
+    background-color: var(--rojoClaro);
 }
 /*----------- Header----------- */
 .header{
-    background-color: var(--prueba);
+    background-color: var(--rojoClaro);
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
 }
 .header-container{
@@ -126,7 +126,7 @@ body {
 }
 .portadas-container{
     position: absolute;
-    background-color: rgba(0,0,0,.1);
+    /* background-color: rgba(0,0,0,.1); */
     width: 100%;
     height: 100%;
 }
@@ -188,7 +188,7 @@ body {
     font-weight: 900;
     color: var(--verdeOliva) ;
     font-size: 2rem;
-    text-align: center;
+    text-align: left;
     text-transform: capitalize;
 }
 @media (min-width: 992px) {
