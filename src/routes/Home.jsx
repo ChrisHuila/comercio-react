@@ -5,6 +5,7 @@ import Notificacion from '../components/helpers/Notificacion';
 import SeccionesProducto from "../components/producto/SeccionesProducto";
 import { CarritoContext } from '../context/carritoContext';
 import '../styles/index.css';
+import Banner from '../components/layout/Banner';
 
 
 const Home  = () => {
@@ -32,9 +33,10 @@ const Home  = () => {
     return ( 
         <Fragment>
 
-            <Header/>
+            <Header />
+            <Banner />
          
-           <div className="container-lg px-4">
+           <div className=" px-4">
               
            <SeccionesProducto
            bodyDataModule={bodyDataModule}
@@ -44,7 +46,7 @@ const Home  = () => {
            </div>
             {mensaje ? <Notificacion tipo='agregado' mensaje='Agregado al Carrito' />:null}
             
-           <Footer/>
+           <Footer />
         
         </Fragment>
      )

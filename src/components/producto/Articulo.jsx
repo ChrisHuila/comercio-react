@@ -16,7 +16,7 @@ const Articulo = ({articulo}) => {
                    
                     <h3 className="card-descuento__texto">60% off envio gratis<i className="bi bi-lightning-fill"></i> <span className="card-descuento__precio"> {`$${(parseInt(articulo.precio)*2.5)}`} </span></h3>
 
-                    <h4 className="headingPrice card-precio">Precio: <span className="text-success-emphasis"> {`$${parseInt(articulo.precio)}`} </span></h4> 
+                    <h4 className="card-precio">Precio: <span className="text-success-emphasis"> {`$${parseInt(articulo.precio)}`} </span></h4> 
 
                     <div className="card-botones">                          
                             <BotonAgregar 

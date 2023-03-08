@@ -53,8 +53,8 @@ const SeccionesProducto = ({bodyDataModule, dataCategories}) => {
         <Fragment>
                         
             {dataCategories.map( (categoria, i) => (
-                <div key={i} className="">
-                    <h2 className=" headingCategoria">{categoria}</h2>
+                <div key={i} className="mt-3">
+                    <h2 className=" categoria-header">{categoria}</h2>
                    
                         <Swiper                    
                         navigation={true}
