@@ -4,7 +4,7 @@ const Footer = () => {
     return ( 
 
       <div className="footer">
-        <div className="container">
+        <div className="footer-container container-lg grid">
 
           <div className="footer-header">
             <Logo 
@@ -29,14 +29,15 @@ const Footer = () => {
           </div> {/* Fin footer-header */}
 
           <div className="footer-contacto">
-            <h2> Informacion de la <span>Tienda</span></h2>
+            <h2> Información de la <span>Tienda</span></h2>
 
             <div className="footer-contacto-card">
               <div className="footer-contacto-icono">
-                icono
+                <i className="bi bi-telephone-fill"></i>
               </div>
               <div className="footer-contacto-informacion">
-                informacion
+                <h4>Número de teléfono</h4>
+                <p className="no-margin">+57 321 5421 2135</p>
               </div>
             </div>
            

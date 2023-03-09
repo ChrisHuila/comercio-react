@@ -29,7 +29,10 @@ body {
 .no-padding{
     padding: 0;
 }
-
+.grid {
+    display: grid;
+    gap: 1.25rem;
+}
 /*----------- Header----------- */
 .header{
     background-color: var(--rojoClaro);
@@ -289,11 +292,15 @@ body {
     padding: 2rem 0;
     margin-top: 1rem;
 }
+.footer-container {
+    padding: 0 1.5rem;
+    row-gap: 2rem;
+}
 .footer-titulo{
     text-align: left;
 }
 .footer-header p {
-    color: var(--blanco);
+    color: var(--gris);
 } 
 
 .footer-redes_link {
@@ -303,11 +310,45 @@ body {
     padding: .25rem;
     border-radius: .25rem;
     transition: .3s;
-    margin-right: .5rem;
+    margin-right: .4rem;
 }
 .footer-redes_link:hover {
     background-color: #ffffff;
 
+}
+.footer-contacto h2 {
+    font-family: var(--textFont);
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #f0f04cd3;
+}
+.footer-contacto span {
+    font-family: var(--headingFont);
+    font-weight: 900
+}
+.footer-contacto-card{
+    display: grid;
+    grid-template-columns: 6% 50%;
+    gap: 1rem;
+
+    /* color: var(--blanco); */
+    color: rgb(53, 51, 51);
+    background-color: rgba(235, 229, 229, 0.11);
+    padding: 1rem;
+    font-family: var(--textFont);
+    font-size: .8rem;
+}
+.footer-contacto-icono {
+    display: grid;
+    text-align: center;
+    align-items: center;
+}
+.footer-contacto-icono i {
+    font-size: 1.2rem;
+}
+.footer-contacto-informacion h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 /* Botones */
 .bton {
