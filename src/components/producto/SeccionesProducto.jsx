@@ -53,7 +53,7 @@ const SeccionesProducto = ({bodyDataModule, dataCategories}) => {
         <Fragment>
                         
             {dataCategories.map( (categoria, i) => (
-                <div key={i} className="mt-3 ">
+                <div key={i} >
                     <h2 className=" categoria-header">{categoria}</h2>
                    
                         <Swiper                    
@@ -78,7 +78,7 @@ const SeccionesProducto = ({bodyDataModule, dataCategories}) => {
 
                     
                     <div className=" d-flex justify-content-end mt-2">
-                        <Link to={'/'} className='btn btn-sm btn-dark mb-3 '>
+                        <Link to={'/'} className='btn btn-sm btn-dark '>
                             Ver todos...
                         </Link> 
                     </div>

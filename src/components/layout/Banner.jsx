@@ -26,10 +26,10 @@ const Banner = () => {
              <Swiper                    
                 pagination={true} 
                 modules={[Autoplay, Pagination]}
-                autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                  }}
+                // autoplay={{
+                //     delay: 4000,
+                //     disableOnInteraction: false,
+                //   }}
                 slidesPerView={1}
                 
             >       
