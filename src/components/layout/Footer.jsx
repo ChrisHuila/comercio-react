@@ -39,7 +39,27 @@ const Footer = () => {
                 <h4>Número de teléfono</h4>
                 <p className="no-margin">+57 321 5421 2135</p>
               </div>
-            </div>
+            </div> {/* fin footer-contacto-card */}
+
+            <div className="footer-contacto-card">
+              <div className="footer-contacto-icono">
+                <i className="bi bi-envelope"></i>
+              </div>
+              <div className="footer-contacto-informacion">
+                <h4>Direccion de correo Electronico</h4>
+                <p className="no-margin">Email : <span>mail@example.com </span> </p>
+              </div>
+            </div> {/* fin footer-contacto-card */}
+
+            <div className="footer-contacto-card">
+              <div className="footer-contacto-icono">
+                <i className="bi bi-geo-alt"></i>
+              </div>
+              <div className="footer-contacto-informacion">
+                <h4>Dirección</h4>
+                <p className="no-margin">Broome St, NY 10002,California, USA</p>
+              </div>
+            </div> {/* fin footer-contacto-card */}
            
 
            
