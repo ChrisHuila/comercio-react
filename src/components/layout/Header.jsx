@@ -13,7 +13,7 @@ const Header = () => {
               </div>
 
               <div className="header-top">
-                <h1 className='heading-font'><span>El</span> Comerciante</h1>
+                <h1 className='heading-font no-margin'><span>E</span>l Comerciante</h1>
                 
                  <FormularioBusqueda/>
               </div>
