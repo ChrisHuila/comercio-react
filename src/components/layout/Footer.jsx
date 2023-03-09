@@ -1,3 +1,4 @@
+import Logo from "../helpers/Logo";
 
 const Footer = () => {
     return ( 
@@ -6,7 +7,9 @@ const Footer = () => {
         <div className="container">
 
           <div className="footer-header">
-            <h1 className='footer-titulo heading-font'><span>E</span>l Comerciante</h1>
+            <Logo 
+              estilo="footer-titulo"
+            />
             <p>Lorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
 
             <div className="footer-redes">

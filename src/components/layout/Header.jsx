@@ -1,5 +1,6 @@
 
 import NavLogin from '../auth/NavLogin';
+import Logo from '../helpers/Logo';
 import FormularioBusqueda from "../producto/FormularioBusqueda";
 
 
@@ -13,7 +14,9 @@ const Header = () => {
               </div>
 
               <div className="header-top">
-                <h1 className='heading-font no-margin'><span>E</span>l Comerciante</h1>
+                <Logo 
+                  estilo=""
+                />
                 
                  <FormularioBusqueda/>
               </div>
