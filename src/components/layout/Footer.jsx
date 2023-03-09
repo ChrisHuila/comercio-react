@@ -60,9 +60,6 @@ const Footer = () => {
                 <p className="no-margin">Broome St, NY 10002,California, USA</p>
               </div>
             </div> {/* fin footer-contacto-card */}
-           
-
-           
 
           </div> {/*fin footer-contacto */}
            

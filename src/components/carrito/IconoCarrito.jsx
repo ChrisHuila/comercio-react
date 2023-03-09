@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import useCarrito from "../../hook/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
 
-const Carrito = () => {   
+const IconoCarrito = () => {   
     
     // Utiliza el hook useCarrito
     const {carrito, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion} = useCarrito();
@@ -58,4 +58,4 @@ const Carrito = () => {
       );
 }
  
-export default Carrito;
+export default IconoCarrito;

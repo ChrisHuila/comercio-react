@@ -1,5 +1,5 @@
 
-const CarritoProductos = ({articulo, carrito, eliminaProducto, actualizarCarrito}) => {
+const PaginaCarrito = ({articulo, carrito, eliminaProducto, actualizarCarrito}) => {
     // Elimina el producto
     const restaProducto = () => {
         eliminaProducto(articulo);
@@ -54,4 +54,4 @@ const CarritoProductos = ({articulo, carrito, eliminaProducto, actualizarCarrito
       );
 }
  
-export default CarritoProductos;
+export default PaginaCarrito;
