@@ -11,7 +11,7 @@ import Banner from '../components/layout/Banner';
 const Home  = () => {
 
    const {mensaje} = useContext(CarritoContext);
-    const bodyDataModule = [
+    const productos = [
         {id:1 , nombre: 'pc',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/mujer-negocios-que-trabajan-computadora-portatil_1388-67.jpg?w=740&t=st=1677514541~exp=1677515141~hmac=c709b5edd4000f60a1a0012b5fa05d70cb3649a5aafdf4ff40057a8cf7273a6c' },
         {id:2 , nombre: 'pc',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/mujer-negocios-que-trabajan-computadora-portatil_1388-67.jpg?w=740&t=st=1677514541~exp=1677515141~hmac=c709b5edd4000f60a1a0012b5fa05d70cb3649a5aafdf4ff40057a8cf7273a6c' },
         {id:3 , nombre: 'pc',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/mujer-negocios-que-trabajan-computadora-portatil_1388-67.jpg?w=740&t=st=1677514541~exp=1677515141~hmac=c709b5edd4000f60a1a0012b5fa05d70cb3649a5aafdf4ff40057a8cf7273a6c' },
@@ -27,8 +27,16 @@ const Home  = () => {
         {id:13 , nombre: 'estufa',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/habitacion-moderna-vacia-muebles_23-2149178335.jpg?w=740&t=st=1677515079~exp=1677515679~hmac=9aed4cab2a1f1587be784610dbd6dc11ad97aba78a7ccf2b23a073faf1060905' }
     ]
 
-    const dataCategories = ['tecnologia', 'moda',]
    
+    // =========== Objeto===============
+    // {id:1 , nombre: 'pc',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/mujer-negocios-que-trabajan-computadora-portatil_1388-67.jpg?w=740&t=st=1677514541~exp=1677515141~hmac=c709b5edd4000f60a1a0012b5fa05d70cb3649a5aafdf4ff40057a8cf7273a6c' }
+
+    // Categorias
+    const categorias = [
+    {id: 1, nombre: 'tecnologia'},
+    {id:2, nombre: 'moda'}
+    ];
+
     
     return ( 
         <Fragment>
@@ -39,8 +47,8 @@ const Home  = () => {
            <div className=" px-4">
               
            <SeccionesProducto
-           bodyDataModule={bodyDataModule}
-           dataCategories={dataCategories}
+           productos={productos}
+           categorias={categorias}
             />
                
            </div>

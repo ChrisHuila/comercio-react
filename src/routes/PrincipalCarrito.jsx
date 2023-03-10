@@ -13,7 +13,7 @@ const PrincipalCarrito = () => {
     return (
         <Fragment>
             <Header />
-            <div className="carrito">
+            <div className="principalcarrito carrito">
                 <table>
                     <thead>
                         <tr>
@@ -36,13 +36,15 @@ const PrincipalCarrito = () => {
                             />
                         ))}
                     </tbody>
+                  
                 </table>
-                <div className="d-grid ">
+                <div className="">
                     <button 
                     className="btn btn-primary mt-3" 
                     type="button"
                     onClick={() => (agregarProducto([]), agregarNotificacion( 1 ))}
-                    >Vaciar carrito</button>
+                    >Vaciar carrito
+                    </button>
                 </div>
         </div>
         <Footer />

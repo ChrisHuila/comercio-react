@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import IconoCarrito from "../carrito/IconoCarrito";
 
 const NavLogin = () => {
     return ( 
@@ -10,7 +9,6 @@ const NavLogin = () => {
             <Link to={'/Login'}  className="nav-link fw-bold fst-italic text-white">
               Log in
             </Link>            
-            <IconoCarrito />
           </div>
         </div>
       </nav>
