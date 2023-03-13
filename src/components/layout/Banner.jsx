@@ -8,8 +8,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Banner = () => {
-    const [numeroportadas, guardasPortadas] = useState([])
+    // State del componente
+    const [numeroportadas, guardasPortadas] = useState([]);
+
     useEffect(() => {
+        // Asigna la cantidad de portadas
         const cantidadPortadas = num => {
             let numero = [];
             for(let i = 1; i <= num; i++){
@@ -43,8 +46,6 @@ const Banner = () => {
                         </SwiperSlide>
 
                    ))}
-                 
-                    
                                          
             </Swiper>
         </div>

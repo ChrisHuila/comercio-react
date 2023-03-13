@@ -399,7 +399,6 @@ td {
 .submenu .carrito {
     display: none;
 }
-
 .submenu:hover .carrito {
     display: block;
     position: absolute;
@@ -408,7 +407,8 @@ td {
     z-index: 10;
     padding: 20px;
     background-color: white;
-    min-height: 400px;
+    max-height: 400px;
+    overflow: scroll;
     min-width: 300px;
     box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.74);
 }

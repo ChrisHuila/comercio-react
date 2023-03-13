@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Notificacion from "../helpers/Notificacion";
+
 import useCarrito from "../../hook/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
 
@@ -21,7 +23,7 @@ const IconoCarrito = () => {
                         </span>
                     :null}                    
                 </Link>            
-                <div className="carrito">
+                <div className="carrito" >
                     <table>
                         <thead>
                             <tr>
@@ -43,12 +45,21 @@ const IconoCarrito = () => {
                             ))}
                         </tbody>
                     </table>
-                    <div className="d-grid ">
-                        <button 
-                        className="btn btn-primary mt-3" 
-                        type="button"
-                        onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
-                        >Vaciar carrito</button>
+                 <div className="d-grid ">
+                    {carrito.length > 0 
+                        ?    
+                            <button 
+                            className="btn btn-primary mt-3" 
+                            type="button"
+                            onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
+                            >Vaciar carrito</button>
+                        
+                        : 
+                            <Notificacion 
+                                tipo= 'informacion'
+                                mensaje= 'Agrega productos al Carrito'
+                            />                    
+                        }
                     </div>
                 </div>
             </li>
