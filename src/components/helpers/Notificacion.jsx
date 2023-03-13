@@ -8,7 +8,7 @@ const Notificacion = ({tipo, mensaje}) => {
             )            
         case 'informacion':
             return(
-                <p className='carrito-vacio btn btn-warning'>{mensaje} </p>
+                <p className='btn btn-warning'>{mensaje} </p>
             )            
         default:            
             break;
