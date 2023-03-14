@@ -408,7 +408,7 @@ td {
     padding: 20px;
     background-color: white;
     max-height: 400px;
-    overflow: scroll;
+    overflow: auto;
     min-width: 300px;
     box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.74);
 }

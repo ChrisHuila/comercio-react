@@ -20,7 +20,7 @@ const style = {
   };
 
 const Articulo = ({articulo}) => { 
-  
+//   State del modal 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);   
