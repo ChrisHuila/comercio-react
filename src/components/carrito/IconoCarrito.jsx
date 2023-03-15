@@ -53,11 +53,17 @@ const IconoCarrito = () => {
                 
                     {carrito.length > 0 
                         ?   <div className="iconoCarrito-botones">
-                                <button 
+                                {/* <button 
                                     className="btn btn-success mt-3" 
                                     type="button"
                                 >Continuar con la Compra
-                                </button>
+                                </button> */}
+                                <Link
+                                    to={'/pagar'} 
+                                    className="btn btn-success mt-3" 
+                                    type="button"
+                                >Continuar con la Compra
+                                </Link>
                                 <button 
                                     className="btn btn-primary " 
                                     type="button"

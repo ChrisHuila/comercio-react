@@ -6,6 +6,7 @@ import Home from "./routes/Home";
 import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
 import PrincipalCarrito from "./routes/PrincipalCarrito";
+import Pagar from "./routes/Pagar";
 
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
     {
       path: "/carrito",
       element: <PrincipalCarrito />,
+    },
+    {
+      path: "/pagar",
+      element: <Pagar />,
     }
       
   ])

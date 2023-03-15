@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
+
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Notificacion from "../components/helpers/Notificacion";
@@ -40,16 +42,17 @@ const PrincipalCarrito = () => {
                 {carrito.length 
                 ?
                 <div className="principalcarrito-botones">
-                    <button 
-                        className="btn btn-success  mt-3" 
+                    <Link
+                        to={'/pagar'} 
+                        className="btn btn-success boton-compra mt-3" 
                         type="button"
                     >Continuar con la Compra
-                    </button>
+                    </Link>
 
                     <button 
                     className="btn btn-primary mt-3" 
                     type="button"
-                    onClick={() => (agregarProducto([]), agregarNotificacion( 1 ))}
+                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
                     >Vaciar carrito
                     </button>
                 </div>
