@@ -54,9 +54,8 @@ const IconoCarrito = () => {
                     {carrito.length > 0 
                         ?   <div className="iconoCarrito-botones">
                                 <button 
-                                className="btn btn-success mt-3" 
-                                type="button"
-                                onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
+                                    className="btn btn-success mt-3" 
+                                    type="button"
                                 >Continuar con la Compra
                                 </button>
                                 <button 

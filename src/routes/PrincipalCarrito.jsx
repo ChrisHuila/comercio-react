@@ -1,8 +1,7 @@
 import { Fragment } from "react";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-
-
+import Notificacion from "../components/helpers/Notificacion";
 import useCarrito from "../hook/useCarrito";
 import PaginaCarrito from "../components/carrito/PaginaCarrito";
 
@@ -13,7 +12,7 @@ const PrincipalCarrito = () => {
     return (
         <Fragment>
             <Header />
-            <div className="principalcarrito carrito">
+            <div className="container principalcarrito carrito">
                 <table>
                     <thead>
                         <tr>
@@ -38,7 +37,15 @@ const PrincipalCarrito = () => {
                     </tbody>
                   
                 </table>
-                <div className="">
+                {carrito.length 
+                ?
+                <div className="principalcarrito-botones">
+                    <button 
+                        className="btn btn-success  mt-3" 
+                        type="button"
+                    >Continuar con la Compra
+                    </button>
+
                     <button 
                     className="btn btn-primary mt-3" 
                     type="button"
@@ -46,6 +53,14 @@ const PrincipalCarrito = () => {
                     >Vaciar carrito
                     </button>
                 </div>
+                :
+                <div className="principalcarrito-boton--notificacion">
+                    <Notificacion 
+                    tipo= 'informacion'
+                    mensaje= 'Agrega productos al Carrito'
+                    />                    
+                </div>
+                }
         </div>
         <Footer />
 

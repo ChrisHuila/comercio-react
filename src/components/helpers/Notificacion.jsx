@@ -1,5 +1,5 @@
 
-const Notificacion = ({tipo, mensaje}) => {
+const Notificacion = ({tipo, mensaje,}) => {
     
     switch (tipo) {
         case 'agregado':
