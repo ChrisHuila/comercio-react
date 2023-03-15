@@ -27,7 +27,7 @@ const consigueAltura = () => {
           guardarHight(consigueAltura)
         ))
 
-        if (hight < 700){
+        if (hight < 500){
           guardarVisible(true)
         }else{
           guardarVisible(false);
