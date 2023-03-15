@@ -27,7 +27,7 @@ const consigueAltura = () => {
           guardarHight(consigueAltura)
         ))
 
-        if (hight < 500){
+        if (hight < 300){
           guardarVisible(true)
         }else{
           guardarVisible(false);
@@ -44,8 +44,6 @@ const consigueAltura = () => {
     navegacionFija();
     
   }, [hight])
-
- 
 
     return ( 
           <header className={`header ${!visible ? 'header-fijo' : ''}`} >

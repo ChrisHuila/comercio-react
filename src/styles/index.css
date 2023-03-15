@@ -336,6 +336,20 @@ body {
     background-color: #ffffff;
 
 }
+.redes--whatsapp{
+    background-color: rgb(58, 155, 58);
+    color: #ffffff;
+}
+.redes--whatsapp:hover {
+    background-color: rgb(74, 182, 74); 
+}
+.redes--instagram {
+    background-color: rgb(234, 130, 26);
+    color: #ffffff;
+}
+.redes--instagram:hover {
+    background-color: rgb(221, 93, 93); 
+}
 
 .footer-contacto h2 {
     font-family: var(--textFont);

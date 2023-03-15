@@ -13,13 +13,13 @@ const Footer = () => {
             <p>Lorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>
 
             <div className="footer-redes">
-              <a href="#" className="footer-redes_link">
+              <a href="#" className="footer-redes_link ">
                 <i className="bi bi-facebook"></i>
               </a>
-              <a href="#" className="footer-redes_link">
+              <a href="#" className="footer-redes_link redes--whatsapp">
                 <i className="bi bi-whatsapp"></i>
               </a>
-              <a href="#" className="footer-redes_link">
+              <a href="#" className="footer-redes_link redes--instagram">
                 <i className="bi bi-instagram"></i>
               </a>
               <a href="#" className="footer-redes_link">
