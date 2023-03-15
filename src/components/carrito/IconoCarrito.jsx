@@ -3,6 +3,7 @@ import Notificacion from "../helpers/Notificacion";
 
 import useCarrito from "../../hook/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
+import ScrollLink from "../helpers/ScrollLink";
 
 const IconoCarrito = () => {   
     
@@ -12,7 +13,11 @@ const IconoCarrito = () => {
     return (        
         <ul style={{listStyle: "none", margin: "0", padding: "0"}}>
             <li className="submenu">
-                <Link to={'/carrito'} className="nav-link fw-bold text-white position-relative" href="#">
+                <Link 
+                to={'/carrito'} 
+                className="nav-link fw-bold text-white position-relative" 
+                onClick={ScrollLink}
+                >
                     <i className="bi bi-cart4">Carrito</i>
                     {notificacion > 1 
                     ? 
@@ -45,22 +50,39 @@ const IconoCarrito = () => {
                             ))}
                         </tbody>
                     </table>
-                 <div className="d-grid ">
+                
                     {carrito.length > 0 
-                        ?    
-                            <button 
-                            className="btn btn-primary mt-3" 
-                            type="button"
-                            onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
-                            >Vaciar carrito</button>
+                        ?   <div className="iconoCarrito-botones">
+                                <button 
+                                className="btn btn-success mt-3" 
+                                type="button"
+                                onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
+                                >Continuar con la Compra
+                                </button>
+                                <button 
+                                    className="btn btn-primary " 
+                                    type="button"
+                                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
+                                    >Vaciar Carrito
+                                </button>
+                                <Link 
+                                    to={'/carrito'} 
+                                    className="btn btn-outline-info" 
+                                    onClick={ScrollLink}
+                                    >
+                                        Ir a la pagina de Carrito
+                                </Link>
+                            </div>
                         
                         : 
-                            <Notificacion 
-                                tipo= 'informacion'
-                                mensaje= 'Agrega productos al Carrito'
-                            />                    
+                            <div className="d-grid">
+                                <Notificacion 
+                                    tipo= 'informacion'
+                                    mensaje= 'Agrega productos al Carrito'
+                                />                    
+                            </div>
                         }
-                    </div>
+                    
                 </div>
             </li>
 

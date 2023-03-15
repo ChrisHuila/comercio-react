@@ -344,7 +344,7 @@ body {
     background-color: rgb(74, 182, 74); 
 }
 .redes--instagram {
-    background-color: rgb(234, 130, 26);
+    background-color: rgb(169, 92, 15);
     color: #ffffff;
 }
 .redes--instagram:hover {
@@ -400,6 +400,18 @@ body {
 }
 .principalcarrito table {
     width: 100%;
+}
+
+/* =====================PAGINA-CARRITO================================ */
+.carrito-contador{
+    display: flex;
+    justify-content: center;
+}
+/*======================ICONO CARRITO=================================  */
+.iconoCarrito-botones{
+    display: grid;
+    row-gap: .2rem;
+    
 }
 /* CARRITO FALTAN CORRECCIONES */
 

@@ -23,7 +23,7 @@ const PaginaCarrito = ({articulo, carrito, eliminaProducto, actualizarCarrito}) 
             <td>{articulo.nombre}</td>
             <td>{`$ ${articulo.precio}`}</td>
             <td>
-                <ul className="pagination no-margin">
+                <ul className="carrito-contador pagination no-margin">
                     <li className="page-item">
                         <a 
                         className="page-link" 
