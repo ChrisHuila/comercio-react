@@ -25,8 +25,8 @@ const SeccionesProducto = ({productos, categorias}) => {
             //previene la ejecucion antes del timeout
             clearTimeout(timeoutId);
             // cambia el estado despues de 100milisegundos
-            timeoutId = setTimeout(() => 
-            setWidth(getWidth()), 150);
+            timeoutId = setTimeout(() => setWidth(getWidth())
+            , 150);
         }
    
         // agregamos el listener rezise

@@ -2,7 +2,7 @@
     --blanco: #ffffff;
     --gris: #e6e5e5;
     --grisOscuro: #87878a;
-    --rojoClaro: #ad3047c8;
+    --rojoClaro: #ad3047eb;
     --azulRey: #2f3848;
     --verdeOliva:  #3D4C53;
     --verdeClaro: #417932f5;
@@ -37,6 +37,14 @@ body {
 .header{
     background-color: var(--rojoClaro);
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+}
+.header-fijo {
+  position: fixed;  
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ad3047;
 }
 .header-container{
     display: flex;
