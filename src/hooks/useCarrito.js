@@ -15,10 +15,17 @@ const useCarrito = () => {
     if(!notificacionesIniciales){
         notificacionesIniciales = 1; // se agrega 1 para que la variable pueda existir
     }
+
+    // Muestra el valor total de localStorage
+    let valorTotalInicial = JSON.parse(localStorage.getItem('valortotal'));
+    if(!valorTotalInicial){
+        valorTotalInicial = 1; // se agrega 1 para que la variable pueda existir
+    }
+
     // state del componente
     const [carrito, actualizarCarrito] = useState(productosIniciales);
     const [notificacion , agregarNotificacion] = useState(notificacionesIniciales);
-    const [valortotal, guardarValorTotal] = useState(0);
+    const [valortotal, guardarValorTotal] = useState(valorTotalInicial);
   
 
     // elimina un producto del carrito  
@@ -44,6 +51,9 @@ const useCarrito = () => {
       
         let numero = notificacion - 1;
         agregarNotificacion( numero )
+        // Actualiza el valor total
+        let valor = valortotal - parseInt(producto.precio)
+        guardarValorTotal(valor)
     }
 
     const agregaLocalStorage = () => {
@@ -58,6 +68,13 @@ const useCarrito = () => {
             localStorage.setItem('notificaciones', JSON.stringify(notificacion));
         }else{
             localStorage.setItem('notificaciones', JSON.stringify(1));
+        }
+
+        // Valida valor total 
+        if(valorTotalInicial){
+            localStorage.setItem('valortotal', JSON.stringify(valortotal));
+        }else{
+            localStorage.setItem('valortotal', JSON.stringify(1));
         }
     }
 
@@ -120,9 +137,11 @@ const useCarrito = () => {
     return {
         carrito, 
         notificacion,
+        valortotal,
         eliminaProducto,
         actualizarCarrito, 
-        agregarNotificacion
+        agregarNotificacion,
+        guardarValorTotal
     };
 }
  

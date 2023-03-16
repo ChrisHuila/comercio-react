@@ -7,7 +7,10 @@ import useCarrito from "../hooks/useCarrito";
 const Pagar = () => {
 
  // Utiliza el hook useCarrito
-    const {carrito} = useCarrito();
+    const {carrito, valortotal} = useCarrito();
+    
+    // Se le quita 1 porque es su valor inicial
+    let totalValor = parseInt(valortotal) - 1;
     return (
         <Fragment>
             {console.log(carrito)} 
@@ -22,7 +25,10 @@ const Pagar = () => {
                         />
                     ))}
                     <hr />
-                    <h3>Total: <span>numero</span> </h3>
+                    {totalValor > 0 && 
+                        <h3>Total: <span>{totalValor}</span> </h3>
+                    }
+                    
                 </div>
 
             </div>

@@ -9,7 +9,7 @@ import PaginaCarrito from "../components/carrito/PaginaCarrito";
 
 const PrincipalCarrito = () => {
     // se toman los productos del carrito del custom hook
-    const {carrito, eliminaProducto, actualizarCarrito, agregarNotificacion} = useCarrito();
+    const {carrito, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
 
     return (
         <Fragment>
@@ -52,7 +52,7 @@ const PrincipalCarrito = () => {
                     <button 
                     className="btn btn-primary mt-3" 
                     type="button"
-                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
+                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ), guardarValorTotal(1))}
                     >Vaciar carrito
                     </button>
                 </div>

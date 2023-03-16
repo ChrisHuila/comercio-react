@@ -8,7 +8,7 @@ import ScrollLink from "../helpers/ScrollLink";
 const IconoCarrito = () => {   
     
     // Utiliza el hook useCarrito
-    const {carrito, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion} = useCarrito();
+    const {carrito, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
 
     return (        
         <ul style={{listStyle: "none", margin: "0", padding: "0"}}>
@@ -63,7 +63,7 @@ const IconoCarrito = () => {
                                 <button 
                                     className="btn btn-primary " 
                                     type="button"
-                                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ))}
+                                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ), guardarValorTotal(1))}
                                     >Vaciar Carrito
                                 </button>
                                 <Link 
