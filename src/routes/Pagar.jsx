@@ -7,7 +7,7 @@ const Pagar = () => {
         <Fragment>
             <Header />
             <div className="pagar container">
-                <div className="pagar-contenedor">
+                <div className="pagar-contenedor sombra-dark">
                     <p>hola</p>
                 </div>
 
