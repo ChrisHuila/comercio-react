@@ -131,6 +131,8 @@ const useCarrito = () => {
             }
 
         muestraProducto();
+        // console.log('hola desde effect ');
+
       
     }, [cambio, carrito, notificacion])
 
