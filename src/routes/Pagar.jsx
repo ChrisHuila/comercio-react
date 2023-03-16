@@ -13,7 +13,7 @@ const Pagar = () => {
             {console.log(carrito)} 
             <Header />
             <div className="pagar container">
-                <div className="pagar-contenedor sombra-dark grid">
+                <div className="pagar-contenedor sombra-dark ">
                     <h2>Gracias por tu Compra</h2>
                     {carrito.map(articulo => (
                         <ArticuloPagar
@@ -21,6 +21,8 @@ const Pagar = () => {
                             articulo={articulo}
                         />
                     ))}
+                    <hr />
+                    <h3>Total: <span>numero</span> </h3>
                 </div>
 
             </div>

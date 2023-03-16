@@ -8,9 +8,9 @@ const ArticuloPagar = ({articulo}) => {
           <div className="articuloPagar-informacion">
               <h4>{articulo.nombre}</h4>
               <ul>
-                  <li>Precio: {articulo.precio} </li>
-                  <li>Cantidad: {articulo.cantidad}</li>
-                  <li><span>Total: {`${articulo.cantidad * parseInt(articulo.precio) }`}</span></li>
+                  <li><span>Precio: </span>{articulo.precio} </li>
+                  <li><span>Cantidad: </span>  {articulo.cantidad}</li>
+                  <li><span>Subtotal: <span className="articuloPagar-informacion_total">{`${articulo.cantidad * parseInt(articulo.precio) }`}</span></span></li>
               </ul>
           </div>
       </div>
