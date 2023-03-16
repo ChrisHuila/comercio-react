@@ -1,5 +1,5 @@
 
-const PaginaCarrito = ({articulo, carrito, valortotal, eliminaProducto, actualizarCarrito, guardarValorTotal}) => {
+const PaginaCarrito = ({articulo, carrito, valortotal,notificacion, eliminaProducto, actualizarCarrito, guardarValorTotal, agregarNotificacion}) => {
     // Elimina el producto
     const restaProducto = () => {
         eliminaProducto(articulo);
@@ -15,6 +15,11 @@ const PaginaCarrito = ({articulo, carrito, valortotal, eliminaProducto, actualiz
 
         })
         actualizarCarrito(carritoActualizado);
+
+        let numero = notificacion + 1;
+        agregarNotificacion( numero )
+
+        // Actualiza el valor total
         let totalValor = valortotal
         guardarValorTotal(totalValor + parseInt(articulo.precio))
     }

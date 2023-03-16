@@ -9,7 +9,7 @@ import PaginaCarrito from "../components/carrito/PaginaCarrito";
 
 const PrincipalCarrito = () => {
     // se toman los productos del carrito del custom hook
-    const {carrito, valortotal, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
+    const {carrito, valortotal, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
 
     return (
         <Fragment>
@@ -33,9 +33,11 @@ const PrincipalCarrito = () => {
                             articulo ={articulo}
                             carrito = {carrito}
                             valortotal={valortotal}
+                            notificacion={notificacion}
                             actualizarCarrito={actualizarCarrito}
                             eliminaProducto = {eliminaProducto}
                             guardarValorTotal={guardarValorTotal}
+                            agregarNotificacion={agregarNotificacion}
                             />
                         ))}
                     </tbody>
