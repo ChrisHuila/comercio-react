@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from 'react';
 
-import NavLogin from '../auth/NavLogin';
+// import NavLogin from '../auth/NavLogin';
+import UserAuth from '../auth/userAuth';
 import IconoCarrito from "../carrito/IconoCarrito";
 import Logo from '../helpers/Logo';
 import FormularioBusqueda from "../producto/FormularioBusqueda";
@@ -53,7 +54,8 @@ const consigueAltura = () => {
                   <IconoCarrito />
                 </div>    
 
-                <NavLogin/>
+                {/* <NavLogin/> */}
+                <UserAuth />
               </div>
               <div className="header-top">
                 <Logo 

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Notificacion from "../helpers/Notificacion";
 
-import useCarrito from "../../hook/useCarrito";
+import useCarrito from "../../hooks/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
 import ScrollLink from "../helpers/ScrollLink";
 
@@ -18,7 +18,7 @@ const IconoCarrito = () => {
                 className="nav-link fw-bold text-white position-relative" 
                 onClick={ScrollLink}
                 >
-                    <i className="bi bi-cart4">Carrito</i>
+                    <i className="bi bi-cart4"></i>
                     {notificacion > 1 
                     ? 
                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -53,17 +53,13 @@ const IconoCarrito = () => {
                 
                     {carrito.length > 0 
                         ?   <div className="iconoCarrito-botones">
-                                {/* <button 
-                                    className="btn btn-success mt-3" 
-                                    type="button"
-                                >Continuar con la Compra
-                                </button> */}
                                 <Link
                                     to={'/pagar'} 
-                                    className="btn btn-success mt-3" 
-                                    type="button"
+                                    className="btn btn-success mt-3"
+                                    onClick={ScrollLink} 
                                 >Continuar con la Compra
                                 </Link>
+                                
                                 <button 
                                     className="btn btn-primary " 
                                     type="button"

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Notificacion from "../components/helpers/Notificacion";
-import useCarrito from "../hook/useCarrito";
+import useCarrito from "../hooks/useCarrito";
 import PaginaCarrito from "../components/carrito/PaginaCarrito";
 
 const PrincipalCarrito = () => {

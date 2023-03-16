@@ -356,7 +356,7 @@ body {
     background-color: rgb(74, 182, 74); 
 }
 .redes--instagram {
-    background-color: rgb(169, 92, 15);
+    background-color: rgb(220, 89, 28);
     color: #ffffff;
 }
 .redes--instagram:hover {
@@ -462,7 +462,7 @@ body {
 }
 @media (min-width: 576px) {
     .submenu:hover .carrito{
-        right: 0;
+        right: -4rem;
     }
 }
 
@@ -497,6 +497,14 @@ body {
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+/* ========================PAGAR============= */
+.pagar{
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ===============================LOGIN========================================== */
@@ -585,3 +593,51 @@ body {
     height: 100%;
     font-weight: 400;
 }
+/* ===============================USER AUTH================================= */
+.button-8 {
+    background-color: #b30f25;
+    border-radius: 3px;
+    border: 1px solid #b30f25;
+    box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+    font-size: 13px;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 5px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+  
+  .button-8:hover,
+  .button-8:focus {
+    background-color: #080101d2;
+    border: 1px solid #080101;
+    color: white;
+  }
+  
+  .button-8:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  }
+  
+  .button-8:active {
+    background-color: #a0c7e4;
+    box-shadow: none;
+    color: #2c5777;
+  }
+  
+  .variante {
+    background-color: #0f64b3;
+    border: 1px solid #0f64b3;
+  }
