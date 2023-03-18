@@ -2,9 +2,11 @@
 import { useState } from "react";
 import {Link} from 'react-router-dom';
 
+
 // import '../../styles/index.css';
 
 const NuevaCuenta = () => {
+
 
     // State para iniciar Sesión
     const [usuario, guardarUsuario] = useState({
@@ -32,7 +34,7 @@ const NuevaCuenta = () => {
         if(email.trim() === '' || password.trim() === ''){
 
         }
-
+        userRegister(usuario)
         // Password minimo 6 caracteres
 
         // los 2 passwords iguales

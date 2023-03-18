@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Portadas from '../Banner/Portadas';
 
+import banner from '../Banner/banner';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from "swiper";
 import 'swiper/css';
@@ -8,21 +10,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Banner = () => {
-    // State del componente
-    const [numeroportadas, guardasPortadas] = useState([]);
-
-    useEffect(() => {
-        // Asigna la cantidad de portadas
-        const cantidadPortadas = num => {
-            let numero = [];
-            for(let i = 1; i <= num; i++){
-                numero.push(`portada-${i}`);
-            }
-            return numero;
-        }
-        guardasPortadas(cantidadPortadas(4) );       
-    }, [])
-
     
     return (
         <div className="banner">
@@ -36,15 +23,13 @@ const Banner = () => {
                 slidesPerView={1}
                 
             >       
-                   {numeroportadas.map(portada => (
-                        <SwiperSlide  
-                        key={portada}
-                        >
-                        <Portadas
-                            portada={portada}
+   
+                   {banner.map((portada, i) => (
+                        <SwiperSlide key={i}>
+                        <Portadas 
+                            portada={portada.img}
                         />
                         </SwiperSlide>
-
                    ))}
                                          
             </Swiper>

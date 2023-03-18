@@ -13,7 +13,6 @@ const Pagar = () => {
     let totalValor = parseInt(valortotal) - 1;
     return (
         <Fragment>
-            {console.log(carrito)} 
             <Header />
             <div className="pagar container">
                 <div className="pagar-contenedor sombra-dark ">

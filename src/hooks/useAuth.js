@@ -14,6 +14,7 @@ export function useAuth () {
     const [ usuarioActual, setUsuarioActual ] = useState(null)
     const [ isLogin, setIslogin ] = useState(false)
     const [isResolve, setIsResolve] = useState(false)
+    const [ loading, setLoading] = useState(false);
 
   
     //register method  
@@ -45,16 +46,18 @@ export function useAuth () {
 
     //Login method
     const userLogin = async (usuario) => {
-
+      setLoading(true);
         const {email, password} = usuario
         try {
         signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
           if (res.user) {
+            setLoading(false);
             window.location.replace('/')     
           }
         })
         } catch (error) {
+          setLoading(false);
           console.log(error)
         }
  
@@ -89,7 +92,7 @@ export function useAuth () {
 
 
       return {
-        usuarioActual, isLogin, isResolve,
+        usuarioActual,loading,  isLogin, isResolve,
         userRegister, userLogin, userLogout
     }
 

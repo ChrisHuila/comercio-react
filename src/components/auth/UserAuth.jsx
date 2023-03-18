@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const UserAuth = () => {
-    const { isLogin, userLogout, isResolve } = useContext(myAuthContext)
+    const { isLogin, userLogout, isResolve, usuarioActual } = useContext(myAuthContext)
     
     return ( 
       <div className="d-flex align-items-center justify-content-center" >
@@ -13,7 +13,7 @@ const UserAuth = () => {
         ?
         <div  className="d-flex align-items-center justify-content-center gap-2 mx-1 p-2">
           
-                  <Link to="/admin"  className="nav-link fw-bold fst-italic mx-2">
+                  <Link to={`/${usuarioActual?.displayName}/${usuarioActual?.uid}`}  className="nav-link fw-bold fst-italic mx-2">
                   <i className="h5 m-0 text-white bi bi-house-gear-fill"></i>
                   </Link>   
 
@@ -31,14 +31,14 @@ const UserAuth = () => {
 
                 {
                     !isLogin &&
-                    <Link to={'/login'}  className="button-8 variante">
+                    <Link to={'/login'}  className="userauth-login">
                     Login
                   </Link>   
                 }
 
                 {
                     !isLogin &&
-                    <Link to={'/register'}  className="button-8 variante">
+                    <Link to={'/register'}  className="userauth-login">
                     register
                   </Link>
                 }

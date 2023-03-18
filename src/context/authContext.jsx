@@ -5,12 +5,13 @@ export const myAuthContext = createContext();
 
 const AuthContext = (props) => {
 
-    const {usuarioActual, isLogin, isResolve, userRegister, userLogin, userLogout} = useAuth()
+    const {usuarioActual, loading, isLogin, isResolve, userRegister, userLogin, userLogout} = useAuth()
 
     return ( 
         <myAuthContext.Provider
             value={{
-               usuarioActual, 
+               usuarioActual,
+               loading, 
                isLogin,
                isResolve,
                userRegister,

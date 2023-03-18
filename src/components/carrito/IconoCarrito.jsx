@@ -18,7 +18,7 @@ const IconoCarrito = () => {
                 className="nav-link fw-bold text-white position-relative" 
                 onClick={ScrollLink}
                 >
-                    <i className="bi bi-cart4"></i>
+                     <i className="bi bi-cart4 h4 m-0"></i>
                     {notificacion > 1 
                     ? 
                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

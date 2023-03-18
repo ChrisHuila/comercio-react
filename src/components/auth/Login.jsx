@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useState} from "react";
 import {Link} from 'react-router-dom';
-
-// import '../../styles/index.css';
 
 const Login = () => {
 
@@ -29,6 +27,7 @@ const Login = () => {
         if(email.trim() === '' || password.trim() === ''){
 
         }
+
 
     }
     return (
@@ -66,6 +65,7 @@ const Login = () => {
                     <div className="campo-form">
                         <input type="submit" className="bton btn-primario bton-block" value="Iniciar Sesión" />
                     </div>
+
                 </form>
 
                 <Link to={'/nueva-cuenta'} className='enlace-cuenta'>

@@ -3,6 +3,7 @@
     --gris: #e6e5e5;
     --grisOscuro: #87878a;
     --rojoClaro: #ad3047eb;
+    /* --rojoClaro: #222546; */
     --azulRey: #2f3848;
     --verdeOliva:  #3D4C53;
     --verdeClaro: #417932f5;
@@ -168,22 +169,6 @@ body {
     height: 100%;
 }
 
-.portada-1{
-    background-image: url(../assets/img/banner1.jpg);
-    background-position: center center;
-}
-.portada-2{
-    background-image: url(../assets/img/banner2.jpg);
-    background-position: center center;
-}
-.portada-3{
-    background-image: url(../assets/img/banner3.jpg);
-    background-position: 15% 15%;
-}
-.portada-4{
-    background-image: url(../assets/img/banner4.jpg);
-    background-position: 30% 30%;
-}
 .portada-container__header {
     display: flex;
     flex-direction: column;
@@ -691,6 +676,10 @@ body {
     font-weight: 400;
 }
 /* ===============================USER AUTH================================= */
+.userauth-login{
+    text-decoration: none;
+    color: var(--blanco);
+}
 .button-8 {
     background-color: #b30f25;
     border-radius: 3px;
