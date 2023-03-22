@@ -22,7 +22,7 @@ const SideBar = (props) => {
     return (
         <div className="header-SideBar">
             <button
-                style={{background: 'transparent', border: 'none', fontSize:'1.5rem'}}
+                style={{background: 'transparent', border: 'none', fontSize:'1.8rem'}}
                 onClick={handleDrawerToggle}
             >
                 <i className="bi bi-list"></i>

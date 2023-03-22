@@ -48,11 +48,12 @@
 
 .header-SideBar {
     flex: 0 0 40px;
-    align-self: center;
+    
 }
 @media (max-width:768px ) {
     .header-SideBar {
         padding-top: 2rem;
+        align-self: center;
     }
 }
 .header-top {
