@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Portadas from '../Banner/Portadas';
 
 import banner from '../Banner/banner';
@@ -23,7 +22,6 @@ const Banner = () => {
                 slidesPerView={1}
                 
             >       
-   
                    {banner.map((portada, i) => (
                         <SwiperSlide key={i}>
                         <Portadas 

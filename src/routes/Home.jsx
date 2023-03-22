@@ -1,11 +1,10 @@
 import { useContext, Fragment } from 'react';
 import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
-import Notificacion from '../components/helpers/Notificacion';
-import SeccionesProducto from "../components/producto/SeccionesProducto";
-import { CarritoContext } from '../context/carritoContext';
-import '../styles/index.css';
 import Banner from '../components/layout/Banner';
+import Footer from '../components/layout/Footer';
+import SeccionesProducto from "../components/producto/SeccionesProducto";
+import Notificacion from '../components/helpers/Notificacion';
+import { CarritoContext } from '../context/carritoContext';
 
 
 const Home  = () => {
@@ -27,9 +26,6 @@ const Home  = () => {
         {id:13 , nombre: 'estufa',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/habitacion-moderna-vacia-muebles_23-2149178335.jpg?w=740&t=st=1677515079~exp=1677515679~hmac=9aed4cab2a1f1587be784610dbd6dc11ad97aba78a7ccf2b23a073faf1060905' }
     ]
 
-   
-    // =========== Objeto===============
-    // {id:1 , nombre: 'pc',categoria:'tecnologia', precio:'50', comentario: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been ', imagen: 'https://img.freepik.com/foto-gratis/mujer-negocios-que-trabajan-computadora-portatil_1388-67.jpg?w=740&t=st=1677514541~exp=1677515141~hmac=c709b5edd4000f60a1a0012b5fa05d70cb3649a5aafdf4ff40057a8cf7273a6c' }
 
     // Categorias
     const categorias = [
@@ -40,7 +36,7 @@ const Home  = () => {
     
     return ( 
         <Fragment>
-
+       
             <Header />
             <Banner />
          
@@ -60,4 +56,4 @@ const Home  = () => {
      )
 }
  
-export default Home
+export default Home;

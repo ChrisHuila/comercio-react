@@ -1,15 +1,15 @@
 
 import { useEffect, useState } from 'react';
 
-// import NavLogin from '../auth/NavLogin';
-import UserAuth from '../auth/userAuth';
+import NavLogin from '../auth/NavLogin';
 import IconoCarrito from "../carrito/IconoCarrito";
+import SideBar from './SideBar';
 import Logo from '../helpers/Logo';
 import FormularioBusqueda from "../producto/FormularioBusqueda";
 
+import "./style/header.css";
 
 const Header = () => {
-
 // retorna la altura al hacer scroll
 const consigueAltura = () => {
   return window.scrollY;
@@ -54,16 +54,22 @@ const consigueAltura = () => {
                   <IconoCarrito />
                 </div>    
 
-                {/* <NavLogin/> */}
-                <UserAuth />
+                <NavLogin/>
+                {/* <UserAuth /> */}
               </div>
-              <div className="header-top">
-                <Logo 
-                  estilo=""
-                />
-                
-                 <FormularioBusqueda />
-              </div>
+             <div className="header-principal">
+                <SideBar />
+                <div className="header-top">
+                    <Logo 
+                      estilo=""
+                    />
+                    
+                    <FormularioBusqueda />
+                </div>
+             </div>
+             
+              
+    
             </div>
             
           </header>
