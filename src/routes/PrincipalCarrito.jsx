@@ -6,8 +6,8 @@ import Footer from "../components/layout/Footer";
 import Notificacion from "../components/helpers/Notificacion";
 import useCarrito from "../hooks/useCarrito";
 import PaginaCarrito from "../components/carrito/PaginaCarrito";
-
 import { CarritoContext } from "../context/carritoContext";
+import ScrollLink from "../components/helpers/ScrollLink";
 
 const PrincipalCarrito = () => {
     // se toman los productos del carrito del custom hook
@@ -60,6 +60,7 @@ const PrincipalCarrito = () => {
                         to={'/pagar'} 
                         className="btn btn-success boton-compra mt-3" 
                         type="button"
+                        onClick={ScrollLink}
                     >Continuar con la Compra
                     </Link>
 
