@@ -1,3 +1,4 @@
+import formatoPrecio from "../helpers/FormatoPrecio";
 
 const PaginaCarrito = ({articulo, carrito, valortotal,notificacion, eliminaProducto, actualizarCarrito, guardarValorTotal, agregarNotificacion}) => {
     // Elimina el producto
@@ -23,12 +24,12 @@ const PaginaCarrito = ({articulo, carrito, valortotal,notificacion, eliminaProdu
         let totalValor = valortotal
         guardarValorTotal(totalValor + parseInt(articulo.precio))
     }
-  
+    const url = `https://firebasestorage.googleapis.com/v0/b/ecommercereact-ccb1d.appspot.com/o/${articulo.imagen}?alt=media&token=fba7ec21-ca5e-4d2b-8cc3-2830309b446a`;
     return (
         <tr>
-            <td><img className=" " style={{width: '90px'}} src={articulo.imagen} alt={articulo.nombre} /></td>            
+            <td><img className=" " style={{width: '90px'}} src={url} alt={articulo.nombre} /></td>            
             <td>{articulo.nombre}</td>
-            <td>{`$ ${articulo.precio}`}</td>
+            <td>{`$ ${formatoPrecio(articulo.precio)}`}</td>
             <td>
                 <ul className="carrito-contador pagination no-margin">
                     <li className="page-item">
@@ -56,7 +57,7 @@ const PaginaCarrito = ({articulo, carrito, valortotal,notificacion, eliminaProdu
                     </li>
                 </ul>
             </td>            
-            <td>{`${articulo.cantidad * parseInt(articulo.precio) }`}</td>         
+            <td>{`$ ${formatoPrecio(articulo.cantidad * parseInt(articulo.precio)) }`}</td>         
         </tr>
       );
 }

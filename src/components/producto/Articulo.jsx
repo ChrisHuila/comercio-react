@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import BotonAgregar from "../helpers/BotonAgregar";
+import formatoPrecio from "../helpers/FormatoPrecio";
 
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -56,9 +57,9 @@ const Articulo = ({articulo}) => {
 
                 <div className="card-body card-body__contenedor" >
                    
-                    <h3 className="card-descuento__texto">60% off envio gratis<i className="bi bi-lightning-fill"></i> <p className="card-descuento__precio"> {`$${(parseInt(articulo.precio)*2.5)}`} </p></h3>
+                    <h3 className="card-descuento__texto">60% off envio gratis<i className="bi bi-lightning-fill"></i> <p className="card-descuento__precio"> {`$${formatoPrecio(parseInt(articulo.precio)*2.5)}`} </p></h3>
 
-                    <h4 className="card-precio">Precio: <span className="text-success-emphasis"> {`$${parseInt(articulo.precio)}`} </span></h4> 
+                    <h4 className="card-precio">Precio: <span className="text-success-emphasis"> {`$${formatoPrecio(parseInt(articulo.precio))}`} </span></h4> 
 
                     <div className="card-botones">                          
                             <BotonAgregar 
