@@ -1,15 +1,23 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useContext } from "react";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import ArticuloPagar from "../components/pagar/ArticuloPagar";
 import useCarrito from "../hooks/useCarrito";
+import { CarritoContext } from "../context/carritoContext";
+
 import formatoPrecio from "../components/helpers/FormatoPrecio";
 
 const Pagar = () => {
 
- // Utiliza el hook useCarrito
+    // Utiliza el hook useCarrito
     const {carrito, valortotal} = useCarrito();
-    
+
+    // Utiliza el context
+    const {guardarMostrarCarrito} = useContext(CarritoContext)
+    useEffect(() => {
+        // Oculta carrito
+        guardarMostrarCarrito(false); 
+    },[])
     // Se le quita 1 porque es su valor inicial
     let totalValor = parseInt(valortotal) - 1;
     

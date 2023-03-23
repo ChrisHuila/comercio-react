@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../components/layout/Header";
@@ -7,10 +7,20 @@ import Notificacion from "../components/helpers/Notificacion";
 import useCarrito from "../hooks/useCarrito";
 import PaginaCarrito from "../components/carrito/PaginaCarrito";
 
+import { CarritoContext } from "../context/carritoContext";
+
 const PrincipalCarrito = () => {
     // se toman los productos del carrito del custom hook
     const {carrito, valortotal, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
 
+    // useContext
+   const {guardarMostrarCarrito} = useContext(CarritoContext);
+
+    //    Oculta el carrito
+    useEffect(() => {
+        guardarMostrarCarrito(false);
+    
+    }, [])
     return (
         <Fragment>
             <Header />

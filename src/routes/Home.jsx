@@ -1,19 +1,23 @@
-import { useContext, Fragment } from 'react';
+import { useContext, Fragment, useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Banner from '../components/layout/Banner';
 import Footer from '../components/layout/Footer';
 import SeccionesProducto from "../components/producto/SeccionesProducto";
 import Notificacion from '../components/helpers/Notificacion';
 import { CarritoContext } from '../context/carritoContext';
+
 import productos from './productos';
 import { categorias } from './productos';
 
 
 const Home  = () => {
 
-   const {mensaje} = useContext(CarritoContext);
-    
-    
+   const {mensaje, guardarMostrarCarrito} = useContext(CarritoContext);
+  
+   useEffect(() => {
+    // muestra carrito 
+    guardarMostrarCarrito(true);
+   }, [])
     return ( 
         <Fragment>
        

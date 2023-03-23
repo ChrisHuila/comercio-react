@@ -1,11 +1,12 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
 import NavLogin from '../auth/NavLogin';
 import IconoCarrito from "../carrito/IconoCarrito";
 import SideBar from './SideBar';
 import Logo from '../helpers/Logo';
 import FormularioBusqueda from "../producto/FormularioBusqueda";
+import { CarritoContext } from '../../context/carritoContext';
 
 import "./style/header.css";
 
@@ -18,12 +19,12 @@ const consigueAltura = () => {
   const [visible, guardarVisible] = useState(true);
   const [hight, guardarHight] = useState(consigueAltura);
   
+// Usecontext
+const {mostrarcarrito} = useContext(CarritoContext);
 
   // Dependiendo al scroll muestra header fijo
   useEffect(() => {
   
-    
-
     const navegacionFija = () => {
         window.addEventListener('scroll', () => (
           guardarHight(consigueAltura)
@@ -51,10 +52,13 @@ const consigueAltura = () => {
           <header className={`header ${!visible && window.innerWidth > 992 ? 'header-fijo' : ''}`} >
             <div className="container-xl header-container" >
               <div className="header-enlaces">
-                <div className="header-carrito">
-                  <IconoCarrito />
-                </div>    
-
+                {mostrarcarrito
+                 && 
+                  <div className="header-carrito">
+                    <IconoCarrito />
+                  </div>   
+                }
+               
                 <NavLogin/>
                 {/* <UserAuth /> */}
               </div>

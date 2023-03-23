@@ -7,6 +7,7 @@ const CarritoProvaider = (props) => {
     const [ producto, agregarCarrito] = useState({});
     const [cambio , guardarCambio] = useState(false);
     const [ mensaje, agregarMensaje] = useState(false);
+    const [mostrarcarrito, guardarMostrarCarrito] = useState(true);
 
     return ( 
         <CarritoContext.Provider
@@ -14,9 +15,11 @@ const CarritoProvaider = (props) => {
                 producto,
                 cambio,
                 mensaje,
+                mostrarcarrito,
                 agregarCarrito,
                 guardarCambio,
-                agregarMensaje
+                agregarMensaje,
+                guardarMostrarCarrito
             }}
         >
 
