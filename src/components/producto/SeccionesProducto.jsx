@@ -66,7 +66,8 @@ const SeccionesProducto = ({productos, categorias}) => {
                         // onSwiper={(swiper) => console.log(swiper)}
                         >       
                             <div className=" mt-3">
-                                {productos.map( articulo => ( articulo.categoria === categoria.nombre
+                                {productos.map( articulo => ( articulo.categoria === categoria.id && articulo.imagen
+                                /* no se le pone "return" porque jsx no lo acepta aqui */
                                 ?<SwiperSlide key={articulo.id}>
                                     <Articulo                                        
                                     articulo={articulo}

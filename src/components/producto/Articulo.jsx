@@ -23,15 +23,18 @@ const Articulo = ({articulo}) => {
 //   State del modal 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);   
+    const handleClose = () => setOpen(false); 
+    
+    const url = `https://firebasestorage.googleapis.com/v0/b/ecommercereact-ccb1d.appspot.com/o/${articulo.imagen}?alt=media&token=fba7ec21-ca5e-4d2b-8cc3-2830309b446a`;
     return (
             <div className="card card-contenedor" >
                 <h2 className="card-header card-header__font">{articulo.nombre}</h2>
                 <div className="">
                         <img 
-                        className="card-header__img"
-                        src={articulo.imagen} 
-                        alt={articulo.nombre}
+                        className="pt-2" height={150} 
+                        style={{objectFit: 'contain'}}
+                        src={url} 
+                        alt={articulo.referencia}
                         onClick={handleOpen}
                         
                          /> 
@@ -42,8 +45,8 @@ const Articulo = ({articulo}) => {
                         <Box sx={style}>
                             <img 
                             className="card-header__img"
-                            src={articulo.imagen} 
-                            alt={articulo.nombre}
+                            src={url} 
+                            alt={articulo.referencia}
                             /> 
                         </Box>
                     </Modal>
