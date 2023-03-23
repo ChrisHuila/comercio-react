@@ -40,10 +40,10 @@ const IconoCarrito = () => {
                             </tr>
                         </thead>
                         <tbody>                            
-                            {carrito.map((articulo, i) => (
+                            {carrito.map((articulo) => (
                                
                                 <ProductoCarrito 
-                                key={i}
+                                key={articulo.id}
                                 articulo ={articulo}
                                 eliminaProducto = {eliminaProducto}
                                 />

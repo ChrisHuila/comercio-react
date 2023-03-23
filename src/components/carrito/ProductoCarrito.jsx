@@ -1,5 +1,6 @@
 import formatoPrecio from "../helpers/FormatoPrecio";
-const ProductoCarrito = ({articulo, eliminaProducto,}) => {
+
+const ProductoCarrito = ({articulo, eliminaProducto}) => {
     // Elimina el producto
     const eliminarProducto = () => {
         eliminaProducto(articulo);

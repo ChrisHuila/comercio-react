@@ -21,9 +21,10 @@ const consigueAltura = () => {
 
   // Dependiendo al scroll muestra header fijo
   useEffect(() => {
-   
-    const navegacionFija = () => {
+  
+    
 
+    const navegacionFija = () => {
         window.addEventListener('scroll', () => (
           guardarHight(consigueAltura)
         ))
@@ -47,7 +48,7 @@ const consigueAltura = () => {
   }, [hight])
 
     return ( 
-          <header className={`header ${!visible ? 'header-fijo' : ''}`} >
+          <header className={`header ${!visible && window.innerWidth > 992 ? 'header-fijo' : ''}`} >
             <div className="container-xl header-container" >
               <div className="header-enlaces">
                 <div className="header-carrito">

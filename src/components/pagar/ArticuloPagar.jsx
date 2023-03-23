@@ -9,7 +9,7 @@ const ArticuloPagar = ({articulo}) => {
           <div className="articuloPagar-informacion">
               <h4>{articulo.referencia}</h4>
               <ul>
-                  <li><span>Precio: </span>{` $${articulo.precio}`} </li>
+                  <li><span>Precio: </span>{` $${formatoPrecio(articulo.precio)}`} </li>
                   <li><span>Cantidad: </span>  {articulo.cantidad}</li>
                   <li><span>Subtotal: <span className="articuloPagar-informacion_total">{`$${formatoPrecio(articulo.cantidad * parseInt(articulo.precio)) }`}</span></span></li>
               </ul>
