@@ -62,8 +62,7 @@ const SeccionesProducto = ({productos, categorias}) => {
                         modules={[Navigation, Pagination]}
                         spaceBetween={10}
                         slidesPerView={getNumber()}
-                        // onSlideChange={() => console.log('slide change')}
-                        // onSwiper={(swiper) => console.log(swiper)}
+                      
                         >       
                             <div className=" mt-3">
                                 {productos.map( articulo => ( articulo.categoria === categoria.id && articulo.imagen

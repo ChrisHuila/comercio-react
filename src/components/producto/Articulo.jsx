@@ -28,7 +28,7 @@ const Articulo = ({articulo}) => {
     const url = `https://firebasestorage.googleapis.com/v0/b/ecommercereact-ccb1d.appspot.com/o/${articulo.imagen}?alt=media&token=fba7ec21-ca5e-4d2b-8cc3-2830309b446a`;
     return (
             <div className="card card-contenedor" >
-                <h2 className="card-header card-header__font">{articulo.nombre}</h2>
+                <h2 className="card-header card-header__font">{articulo.referencia}</h2>
                 <div className="">
                         <img 
                         className="pt-2" height={150} 
