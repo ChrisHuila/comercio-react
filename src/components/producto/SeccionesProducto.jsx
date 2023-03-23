@@ -54,7 +54,9 @@ const SeccionesProducto = ({productos, categorias}) => {
                         
             {categorias.map( (categoria, i) => (
                 <div key={i} >
-                    <h2 className=" categoria-header">{categoria.nombre}</h2>
+                    <Link to={`/${categoria.nombre}`} style={{textDecoration: 'none'}}>
+                        <h2 className=" categoria-header">{categoria.nombre}</h2>
+                    </Link> 
                    
                         <Swiper                    
                         navigation={true}
@@ -78,9 +80,7 @@ const SeccionesProducto = ({productos, categorias}) => {
 
                     
                     <div className=" d-flex justify-content-end mt-2">
-                        <Link to={'/'} className='btn btn-sm btn-dark '>
-                            Ver todos...
-                        </Link> 
+                        
                     </div>
                       
 
