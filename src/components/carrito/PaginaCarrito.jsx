@@ -35,7 +35,7 @@ const PaginaCarrito = ({articulo, carrito, valortotal,notificacion, eliminaProdu
                     <li className="page-item">
                         <a 
                         className="page-link" 
-                        href="#" 
+                        href="#!" 
                         onClick={restaProducto} 
                         aria-label="Previous"
                         >
@@ -48,7 +48,7 @@ const PaginaCarrito = ({articulo, carrito, valortotal,notificacion, eliminaProdu
                     <li className="page-item">
                         <a 
                         className="page-link" 
-                        href="#" 
+                        href="#!" 
                         onClick={adicionaProducto} 
                         aria-label="Previous"
                         >

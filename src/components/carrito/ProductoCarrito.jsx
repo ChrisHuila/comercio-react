@@ -15,7 +15,7 @@ const ProductoCarrito = ({articulo, eliminaProducto}) => {
             
             <td>
                 <a 
-                href="#" 
+                href="#!" 
                 className="borrar-curso"
                 onClick={eliminarProducto}
                 >X</a>
