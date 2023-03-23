@@ -1,6 +1,6 @@
-#mejora los estilos del icono
-#colocar el sidebar
+#hacer reutilizable los estilos
 #sidebar
+#colocar las categorias
 #imagenes en cuadricula
 #tablas responsive
 

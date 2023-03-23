@@ -1,12 +1,36 @@
 :root {
-    --blanco: #ffffff;
-    --gris: #e6e5e5;
-    --grisOscuro: #87878a;
-    --rojoClaro: #ad3047eb;
-    /* --rojoClaro: #222546; */
-    --azulRey: #2f3848;
-    --verdeOliva:  #3D4C53;
-    --verdeClaro: #417932f5;
+/* =========Colors ========= */
+/*Color mode HSLA(hue, saturation, lightness, opacity)*/
+/* 
+rojoClaro: hsla(349, 57%, 43%, 0.922)
+  
+azulOscuro: hsl(197, 37%, 15%);
+verdeMarino: hsl(201, 13%, 22%);
+
+*/
+--first-hue: 349;
+--sat: 57%;
+--lig: 43%;
+--opa: 1;
+--first-color: hsla(var(--first-hue), var(--sat), var(--lig), var(--opa));
+--title-color:  hsl(201, 13%, 22%);
+
+/* --text-color: */
+--blanco: #ffffff;
+--negro: #000000;
+--gris: #e6e5e5;
+--grisOscuro: #87878a;
+--azulRey: #2e3747;
+--verdeOliva:  hsl(199, 15%, 28%);
+--verdeClaro: #417932f5;
+
+--logo: var(--blanco);
+--logo-span: var(--negro);
+--logo-span-bg: rgb(227, 221, 104);
+
+  
+
+    
     --headingFont:'Raleway', sans-serif;
     --textFont:  'Roboto', sans-serif;
 }
@@ -42,7 +66,7 @@ body {
     display: inline;
     padding: 1rem ;
     background-color: var(--azulRey);
-    color: white;
+    color: var(--blanco);
     border-radius: 5px;
     opacity: 0.9;
 }
@@ -106,7 +130,7 @@ body {
 .categoria-header{
     font-family: var(--textFont);
     font-weight: 900;
-    color: var(--verdeOliva) ;
+    color: var(--title-color) ;
     font-size: 2rem;
     text-align: left;
     text-transform: capitalize;
@@ -139,7 +163,7 @@ body {
 .card-header__font{
     font-family: var(--textFont);
     font-weight: 700;
-    color: var(--azulRey);
+    color: var(--title-color);
     font-size: 1.3rem;
     text-align: center;
     text-transform: capitalize;
@@ -199,7 +223,7 @@ body {
 }
  /*¨=========================================FOOTER============================================ */
 .footer{
-    background-color: var(--rojoClaro);
+    background-color: var(--first-color);
     padding: 2rem 0;
     margin-top: 1rem;
 }
@@ -474,20 +498,7 @@ body {
     color: var(--verdeClaro);
     font-size: 1rem;
 }
-/* 
-.footer-contacto span {
-    font-family: var(--headingFont);
-    font-weight: 900
-}
 
-.footer-contacto-informacion h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-.footer-contacto-informacion span {
-    color: #c5ebead6;
-    font-size: 1rem;
-} */
 /* ===============================LOGIN========================================== */
 .form-usuario {
     background-color: var(--verdeOliva);

@@ -1,6 +1,6 @@
 
 .header{
-    background-color: var(--rojoClaro);
+    background-color: var(--first-color);
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
 }
 .header-fijo {
@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ad3047;
+  background-color: var(--first-color);
 }
 .header-container{
     display: flex;
@@ -71,23 +71,34 @@
         justify-content: space-around;
     }
 }
+.header-SideBar button {
+    background: transparent;
+    font-size: 1.8rem;
+    border: none;
+    color: var(--blanco);;
+}
 .heading-font{
     font-family: var(--headingFont);
     font-weight: 700;
-    color: var(--gris);
+    color: var(--logo);
     text-align: center;
     text-transform: uppercase;
     font-size: 1.5rem;
     
-    
+    padding-bottom: 1rem;
     margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .heading-font{
+        padding-bottom: 0; 
+    }
 }
 .heading-font span {
     font-size: 1.8rem;
-    background-color: #e3dc67;
+    background-color: var(--logo-span-bg);
     border-radius: .1rem;
     padding: .5rem;
-    color: #000000;
+    color: var(--logo-span);
     
 }
 
