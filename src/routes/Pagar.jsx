@@ -6,6 +6,7 @@ import useCarrito from "../hooks/useCarrito";
 import { CarritoContext } from "../context/carritoContext";
 
 import formatoPrecio from "../components/helpers/FormatoPrecio";
+import "./style/pagar.css";
 
 const Pagar = () => {
 
@@ -26,7 +27,7 @@ const Pagar = () => {
             <Header />
             <div className="pagar container">
                 <div className="pagar-contenedor sombra-dark ">
-                    <h2>Gracias por tu Compra</h2>
+                    <h2>Por favor confirma tu Compra</h2>
                     {carrito.map(articulo => (
                         <ArticuloPagar
                             key={articulo.id}
@@ -34,9 +35,17 @@ const Pagar = () => {
                         />
                     ))}
                     <hr />
-                    {totalValor > 0 && 
-                        <h3>Total: <span>{`$${formatoPrecio(totalValor)}`}</span> </h3>
-                    }
+                    <div className="pagar-confirmacion">
+                        {totalValor > 0 && 
+                            <h3>Total: <span>{`$${formatoPrecio(totalValor)}`}</span> </h3>
+                        }
+                        <button
+                            className="btn btn-success"
+                        >
+                            Confirmar Compra
+                        </button>
+                  
+                    </div>
                     
                 </div>
 

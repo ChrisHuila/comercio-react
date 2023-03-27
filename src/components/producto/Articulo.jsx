@@ -30,12 +30,11 @@ const Articulo = ({articulo}) => {
     return (
             <div className="card card-contenedor" >
                 <h2 className="card-header card-header__font">{articulo.referencia.substring(0, 15)}</h2>
-                <div className="" style={{textAlign: 'center', background:'white'}}>
+                <div className="" style={{textAlign: 'center', background:'white', paddingTop:'1rem'}}>
                         <img 
                         className="card-header__img"
                         style={{ height: '150px'}}
-                        // className="pt-2" height={150} 
-                        // style={{objectFit: 'contain'}}
+                       
                         src={url} 
                         alt={articulo.referencia}
                         onClick={handleOpen}

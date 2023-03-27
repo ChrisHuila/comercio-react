@@ -31,8 +31,8 @@ verdeMarino: hsl(201, 13%, 22%);
   
 
     
-    --headingFont:'Raleway', sans-serif;
-    --textFont:  'Roboto', sans-serif;
+--headingFont:'Raleway', sans-serif;
+--textFont:  'Roboto', sans-serif;
 }
 /* Globales */
 html {
@@ -71,7 +71,33 @@ body {
     opacity: 0.9;
 }
 /*==============================HEADER============================*/
+/* =====================SIDEBAR============== */
 
+.sidebar-titulo{
+    font-family: var(--textFont);
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 1rem 0 0 1rem;
+    color: var(--azulRey);
+    font-size: 1.5rem;
+}
+.sidebar-categorias{
+    display: flex;
+    flex-direction: column;
+
+}
+.sidebar-categoria_lista{
+    padding-left: 2rem;
+    text-transform: capitalize;
+    font-family: var(--textFont);
+}
+.sidebar-categoria_lista h2{
+    font-size: 1.2rem;
+    color: var(--azulRey);
+}
+.sidebar-categoria_lista:hover {
+    background: rgb(218, 218, 28);
+}
 /* ======================================BANNER======================== */
 .banner{
     margin-bottom: 4rem;
@@ -170,6 +196,7 @@ body {
 }
 .card-header__img{
     max-width: 100%;
+    
 }
 .card-body__contenedor{
     position: relative;
@@ -418,51 +445,7 @@ body {
     font-weight: bold;
 }
 /* ========================PAGAR============= */
-.pagar{
-    min-height: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.pagar-contenedor {
-    background-color: var(--blanco);
-    max-width: 500px;
-    width: 95%;
-    border-radius: 10px;
-    padding: 3rem 2rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-.pagar-contenedor h2 {
-    font-family: var(--textFont);
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--verdeClaro);
-    text-transform: uppercase;
-    margin-bottom: 2rem;
 
-}
-.pagar-contenedor hr {
-    /* border: dotted  #3a95e5df  6px; */
-    border: dotted  #000000  6px;
-    border-bottom: none;
-}
-.pagar-contenedor h3 {
-    font-family: var(--textFont);
-    font-weight: 700;
-    font-size: 1rem;
-    color: #000000c2;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    text-align: end;
-    margin-right: 1rem;
-
-}
-.pagar-contenedor h3 span {
-    color: var(--verdeClaro);
-    font-size: 1.2rem;
-}
 /* ========ARTICULO PAGAR =============== */
 
 .articuloPagar{

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { categorias } from "../../routes/productos";
 import Drawer from "@mui/material/Drawer";
 
 
@@ -14,8 +14,18 @@ const SideBar = (props) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     const drawer = (
-        <div>
-        
+        <div className="sidebar-drawer">
+
+          <h1 className="sidebar-titulo"><i className="bi bi-card-list"></i> Categorias</h1>
+          <hr />
+          <div className="sidebar-categorias">
+            {categorias.map( categoria => (
+              <div key={categoria.id} className="sidebar-categoria_lista">
+                <h2>{categoria.nombre}</h2>
+              </div>
+            ))}
+          </div>
+
         </div>
       );
 

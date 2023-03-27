@@ -49,12 +49,13 @@ const SeccionesProducto = ({productos, categorias}) => {
         
     }
 
+
     return ( 
         <Fragment>
                         
             {categorias.map( (categoria, i) => (
                 <div key={i} >
-                    <Link to={`/${categoria.nombre}`} style={{textDecoration: 'none'}}>
+                    <Link to={`/${categoria.nombre}`} style={{textDecoration: 'none', display:'inline-block'}}>
                         <h2 className=" categoria-header">{categoria.nombre}</h2>
                     </Link> 
                    
@@ -66,16 +67,15 @@ const SeccionesProducto = ({productos, categorias}) => {
                         slidesPerView={getNumber()}
                       
                         >       
-                            <div className=" mt-3">
+                            
                                 {productos.map( articulo => ( articulo.categoria === categoria.id && articulo.imagen
-                                /* no se le pone "return" porque jsx no lo acepta aqui */
                                 ?<SwiperSlide key={articulo.id}>
                                     <Articulo                                        
                                     articulo={articulo}
                                     />
                                 </SwiperSlide>
                                 : null))}
-                            </div>                      
+                                      
                         </Swiper>
 
                     

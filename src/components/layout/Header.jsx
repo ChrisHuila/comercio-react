@@ -68,7 +68,6 @@ const {mostrarcarrito} = useContext(CarritoContext);
                     <Logo 
                       estilo=""
                     />
-                    
                     <FormularioBusqueda />
                 </div>
              </div>

@@ -18,7 +18,7 @@ const PrincipalCarrito = () => {
 
     //    Oculta el carrito
     useEffect(() => {
-        guardarMostrarCarrito(false);
+        guardarMostrarCarrito(true);
     
     }, [])
     return (
