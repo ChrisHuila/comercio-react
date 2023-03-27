@@ -2,6 +2,7 @@ import { useState } from "react";
 import { categorias } from "../../routes/productos";
 import Drawer from "@mui/material/Drawer";
 
+import "./style/sidebar.css";
 
 const SideBar = (props) => {
     const { window } = props;

@@ -1,0 +1,32 @@
+
+
+.sidebar-titulo{
+    font-family: var(--textFont);
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 1rem 0 0 1rem;
+    color: var(--azulRey);
+    font-size: 1.5rem;
+}
+.sidebar-categorias{
+    display: flex;
+    flex-direction: column;
+
+}
+.sidebar-categoria_lista{
+    padding-left: 2rem;
+    padding-top: .5rem;
+    text-transform: capitalize;
+    font-family: var(--textFont);
+}
+.sidebar-categoria_lista:hover {
+    background: rgb(5, 96, 243);
+    cursor: pointer;
+}
+.sidebar-categoria_lista h2{
+    font-size: 1.2rem;
+    color: var(--azulRey);
+}
+.sidebar-categoria_lista:hover h2 {
+    color: var(--blanco);
+}

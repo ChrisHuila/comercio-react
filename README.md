@@ -1,8 +1,5 @@
-linpiar arreglo
-#contenido modal
 
-#settimeout redireccionar
-
+#sidebar
 
 
 
