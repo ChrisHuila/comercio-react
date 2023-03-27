@@ -1,4 +1,5 @@
-import { Fragment, useEffect, useContext } from "react";
+import { Fragment, useEffect, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import ArticuloPagar from "../components/pagar/ArticuloPagar";
@@ -8,10 +9,28 @@ import { CarritoContext } from "../context/carritoContext";
 import formatoPrecio from "../components/helpers/FormatoPrecio";
 import "./style/pagar.css";
 
-const Pagar = () => {
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
 
+const style = {
+    position: 'absolute',
+    top: '45%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    maxWidth: 600,
+    width:'95%',
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 0,
+  };
+
+const Pagar = () => {
+    //   State del modal 
+    const [open, setOpen] = useState(false);
+ 
     // Utiliza el hook useCarrito
-    const {carrito, valortotal} = useCarrito();
+    const {carrito, valortotal, actualizarCarrito, agregarNotificacion,guardarValorTotal } = useCarrito();
 
     // Utiliza el context
     const {guardarMostrarCarrito} = useContext(CarritoContext)
@@ -21,7 +40,21 @@ const Pagar = () => {
     },[])
     // Se le quita 1 porque es su valor inicial
     let totalValor = parseInt(valortotal) - 1;
+
+    const navigate = useNavigate();
     
+    const compraConfirmada = () => {
+        // Muestra modal de agradecimiento
+        setOpen(true);
+        // Retorna a los valores iniciales
+        actualizarCarrito([]);
+        agregarNotificacion(1);
+        guardarValorTotal(0);
+        // // Despues de 5 seg redirecciona
+        setTimeout(() => {
+            navigate("/", { replace: true }); 
+        }, 5000);
+    }
     return (
         <Fragment>
             <Header />
@@ -41,9 +74,18 @@ const Pagar = () => {
                         }
                         <button
                             className="btn btn-success"
+                            onClick={compraConfirmada}
                         >
                             Confirmar Compra
                         </button>
+                        <Modal
+                        open={open}
+                        >
+                            <Box sx={style}>
+                                <h2 className="bg-success bg-gradient text-white text-center no-margin">Gracias por tu compra</h2>
+                                <img src="https://images.pexels.com/photos/2072168/pexels-photo-2072168.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style={{maxWidth: '100%'}} alt="thank-you" />
+                            </Box>
+                        </Modal>
                   
                     </div>
                     
