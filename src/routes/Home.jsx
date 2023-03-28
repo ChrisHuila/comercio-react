@@ -18,6 +18,7 @@ const Home  = () => {
     // muestra carrito 
     guardarMostrarCarrito(true);
    }, [])
+   
     return ( 
         <Fragment>
        

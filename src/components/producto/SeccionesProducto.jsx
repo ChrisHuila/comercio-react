@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
-import Articulo from "./Articulo";
 import { Link } from "react-router-dom";
+import Articulo from "./Articulo";
+import ScrollLink from "../helpers/ScrollLink";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from "swiper";
@@ -49,13 +50,16 @@ const SeccionesProducto = ({productos, categorias}) => {
         
     }
 
-
     return ( 
         <Fragment>
                         
             {categorias.map( (categoria, i) => (
                 <div key={i} >
-                    <Link to={`/${categoria.nombre}`} style={{textDecoration: 'none', display:'inline-block'}}>
+                    <Link 
+                    to={`/categoria/${categoria.nombre}/${categoria.id}`} 
+                    style={{textDecoration: 'none', display:'inline-block'}}
+                    onClick={ScrollLink}
+                    >
                         <h2 className=" categoria-header">{categoria.nombre}</h2>
                     </Link> 
                    
@@ -77,13 +81,6 @@ const SeccionesProducto = ({productos, categorias}) => {
                                 : null))}
                                       
                         </Swiper>
-
-                    
-                    <div className=" d-flex justify-content-end mt-2">
-                        
-                    </div>
-                      
-
                 </div>
             ))}
 

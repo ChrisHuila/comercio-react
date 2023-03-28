@@ -69,7 +69,80 @@ const productos = [
         "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
         "nombre": "laptop",
         "categoria": "GTwySwmoX9MHRf4KqIly"
-    }
+    },
+    {
+        "precio": "2500000",
+        "garantia": "1 año",
+        "referencia": "Rayzen  A314-22-R58U",
+        "imagen": "1664226976753.jpg",
+        "marca": "acer",
+        "id": "S7qerTXULubFZZPcULYc1",
+        "color": "gris",
+        "sistemaoperativo": "windows",
+        "tipo": "consumo",
+        "date": 1679500951541,
+        "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+        "nombre": "laptop",
+        "categoria": "GTwySwmoX9MHRf4KqIly"
+    },
+    {
+        "precio": "2500000",
+        "garantia": "1 año",
+        "referencia": "Rayzen  A314-22-R58U",
+        "imagen": "1664226976753.jpg",
+        "marca": "acer",
+        "id": "S7qerTXULubFZZPcULYc2",
+        "color": "gris",
+        "sistemaoperativo": "windows",
+        "tipo": "consumo",
+        "date": 1679500951541,
+        "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+        "nombre": "laptop",
+        "categoria": "GTwySwmoX9MHRf4KqIly"
+    },
+    {
+        "precio": "2500000",
+        "garantia": "1 año",
+        "referencia": "Rayzen  A314-22-R58U",
+        "imagen": "1664226976753.jpg",
+        "marca": "acer",
+        "id": "S7qerTXULubFZZPcULYc3",
+        "color": "gris",
+        "sistemaoperativo": "windows",
+        "tipo": "consumo",
+        "date": 1679500951541,
+        "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+        "nombre": "laptop",
+        "categoria": "GTwySwmoX9MHRf4KqIly"
+    },
+    {
+        "precio": "2500000",
+        "garantia": "1 año",
+        "referencia": "Rayzen  A314-22-R58U",
+        "imagen": "1664226976753.jpg",
+        "marca": "acer",
+        "id": "S7qerTXULubFZZPcULYc4",
+        "color": "gris",
+        "sistemaoperativo": "windows",
+        "tipo": "consumo",
+        "date": 1679500951541,
+        "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+        "nombre": "laptop",
+        "categoria": "GTwySwmoX9MHRf4KqIly"
+    },
 ];
+
+/*  
+* date
+1679077416590
+* id
+"GTwySwmoX9MHRf4KqIly"
+*  lastEdited
+1680028409421
+*  nombre
+"portatiles"
+*  userid
+"4VtdS4GIFyXfJJzyGGM83TVeyHw2"
+ */
 
 export default productos;

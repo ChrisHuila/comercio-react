@@ -8,6 +8,7 @@ import NuevaCuenta from "./components/auth/NuevaCuenta";
 import PrincipalCarrito from "./routes/PrincipalCarrito";
 import Pagar from "./routes/Pagar";
 import Perfil from "./routes/Perfil";
+import Categorias from "./routes/Categorias";
 
 
 function App() {
@@ -36,6 +37,10 @@ function App() {
     {
       path: "/:usuario/:id",
       element: <Perfil />,
+    }, 
+    {
+      path: "/categoria/:nombrecategorias/:idcategoria",
+      element: <Categorias />,
     }, 
     // {
     //   path: "/product/:name/:id",
