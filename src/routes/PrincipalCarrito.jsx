@@ -73,10 +73,12 @@ const PrincipalCarrito = () => {
                 </div>
                 :
                 <div className="principalcarrito-boton--notificacion">
-                    <Notificacion 
-                    tipo= 'informacion'
-                    mensaje= 'Agrega productos al Carrito'
-                    />                    
+                    <Link to={'/'} onClick={ScrollLink}>
+                        <Notificacion 
+                        tipo= 'informacion'
+                        mensaje= 'Agrega productos al Carrito'
+                        />                    
+                    </Link>
                 </div>
                 }
         </div>

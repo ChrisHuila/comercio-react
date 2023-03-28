@@ -36,8 +36,12 @@ function App() {
     {
       path: "/:usuario/:id",
       element: <Perfil />,
-    }
-      
+    }, 
+    // {
+    //   path: "/product/:name/:id",
+    //   element: <ProductView />
+    // }  
+    
   ])
 
   

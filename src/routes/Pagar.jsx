@@ -7,6 +7,7 @@ import useCarrito from "../hooks/useCarrito";
 import { CarritoContext } from "../context/carritoContext";
 
 import formatoPrecio from "../components/helpers/FormatoPrecio";
+import ScrollLink from "../components/helpers/ScrollLink";
 import "./style/pagar.css";
 
 import Box from '@mui/material/Box';
@@ -50,6 +51,7 @@ const Pagar = () => {
         actualizarCarrito([]);
         agregarNotificacion(1);
         guardarValorTotal(0);
+        ScrollLink();
         // // Despues de 5 seg redirecciona
         setTimeout(() => {
             navigate("/", { replace: true }); 

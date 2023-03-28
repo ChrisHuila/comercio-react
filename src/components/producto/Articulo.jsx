@@ -45,11 +45,14 @@ const Articulo = ({articulo}) => {
                         onClose={handleClose}
                     >
                         <Box sx={style}>
-                            <img 
-                            className="card-header__img"
-                            src={url} 
-                            alt={articulo.referencia}
-                            /> 
+                            <Link to={`/Producto/${articulo.nombre}/${articulo.id}`}>
+                                <img 
+                                className="card-header__img"
+                                src={url} 
+                                alt={articulo.referencia}
+                                /> 
+                            </Link>
+                        
                         </Box>
                     </Modal>
                 </div>
