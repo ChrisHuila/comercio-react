@@ -1,0 +1,74 @@
+/* ==========PAGINA CATEGORIAS================ */
+.categorias-heading{
+    font-family: var(--textFont);
+    font-weight: 900;
+    color: var(--title-color) ;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 2rem 0;
+}
+@media (min-width: 992px) {
+    .categorias-heading{
+        font-size: 3rem
+    } 
+}
+@media (min-width: 768px) {
+    .categorias-heading{
+        font-size: 2.5rem;
+    }
+}
+
+/* ==========CATEGORIA================== */
+.categoria-contenedor {
+    
+     width:100%;
+     margin-bottom: 1rem;
+     transition:  transform .5s, box-shadow .6s;
+}
+.categoria-contenedor:hover{
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+.card-header__font{
+    font-family: var(--textFont);
+    font-weight: 700;
+    color: var(--title-color);
+    font-size: 1rem;
+    text-align: center;
+    text-transform: capitalize;
+}
+.categoria-card__img{
+    max-width: 100%;
+    height: 100px;
+    
+}
+.card-body__contenedor{
+    position: relative;
+}
+.categoria-descuento__texto{
+ 
+    font-size: .9rem;
+    color: var(--verdeClaro);
+    font-family: var(--textFont);
+    font-weight: 700;
+    transition: transform .5s;
+}
+.categoria-descuento__precio{
+    color: var(--grisOscuro);    
+    text-decoration-line: line-through;
+    font-size: .9rem;
+}
+.categoria-precio {
+    font-family: var(--textFont);
+    font-weight: 700;
+    color: var(--azulRey);
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.card-botones{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}

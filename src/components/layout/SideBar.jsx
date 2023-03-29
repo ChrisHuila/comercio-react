@@ -42,7 +42,6 @@ const SideBar = (props) => {
                 <Drawer
                 container={container}
                 variant="temporary"
-                // anchor="left"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
                 ModalProps={{
