@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { categorias } from "../../routes/productos";
+import { Link } from "react-router-dom";
+import ScrollLink from "../helpers/ScrollLink";
 import Drawer from "@mui/material/Drawer";
 
 import "./style/sidebar.css";
@@ -21,9 +23,16 @@ const SideBar = (props) => {
           <hr />
           <div className="sidebar-categorias">
             {categorias.map( categoria => (
-              <div key={categoria.id} className="sidebar-categoria_lista">
-                <h2>{categoria.nombre}</h2>
-              </div>
+              <Link
+              to={`/categoria/${categoria.nombre}/${categoria.id}`} 
+              style={{textDecoration: 'none', display:'inline-block'}}
+              onClick={ScrollLink}
+              key={categoria.id}
+              >
+                <div className="sidebar-categoria_lista">
+                  <h2>{categoria.nombre}</h2>
+                </div>
+              </Link>
             ))}
           </div>
 

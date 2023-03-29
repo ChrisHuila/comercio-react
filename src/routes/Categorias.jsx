@@ -1,16 +1,24 @@
-import {Fragment} from "react";
+import {Fragment, useContext, useEffect} from "react";
 import { useParams } from 'react-router-dom';
 
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import productos, {categorias} from "./productos";
 import Categoria from "../components/categorias/categoria";
+import { CarritoContext } from "../context/carritoContext";
 
 import "../components/categorias/style/categoria.css";
 
 const Categorias = () => {
   // toma los parametros de la categoria
   const {nombrecategorias: categoria, idcategoria} =useParams();
+  // toma la funcion del context
+  const { guardarMostrarCarrito} = useContext(CarritoContext)
+
+  useEffect(() => {
+    // Muestra el carrito si no esta visible
+    guardarMostrarCarrito(true);
+  },[])
 
     return (
       <Fragment>

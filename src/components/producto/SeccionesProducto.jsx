@@ -46,13 +46,10 @@ const SeccionesProducto = ({productos, categorias}) => {
         } else{
             return 1;
         }
-
-        
     }
 
     return ( 
         <Fragment>
-                        
             {categorias.map( (categoria, i) => (
                 <div key={i} >
                     <Link 
@@ -62,7 +59,6 @@ const SeccionesProducto = ({productos, categorias}) => {
                     >
                         <h2 className=" categoria-header">{categoria.nombre}</h2>
                     </Link> 
-                   
                         <Swiper                    
                         navigation={true}
                         pagination={true} 
@@ -71,7 +67,6 @@ const SeccionesProducto = ({productos, categorias}) => {
                         slidesPerView={getNumber()}
                       
                         >       
-                            
                                 {productos.map( articulo => ( articulo.categoria === categoria.id && articulo.imagen
                                 ?<SwiperSlide key={articulo.id}>
                                     <Articulo                                        
