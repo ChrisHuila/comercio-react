@@ -1,11 +1,8 @@
 
-#cambiar estilos
-#cambiar el nombre de las clases
-#colocar las card estaticas
 
-
-
-
+#analizar el componente categoria
+#intersectionobserver colocar
+#useCallback
 
 
 # comercio-react
