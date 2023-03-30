@@ -8,6 +8,7 @@ import { Navigation, Pagination } from "swiper";
 import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import PropTypes from 'prop-types';
 
 const SeccionesProducto = ({productos, categorias}) => {
 
@@ -84,5 +85,9 @@ const SeccionesProducto = ({productos, categorias}) => {
         </Fragment>
      );
 }
- 
+
+SeccionesProducto.propTypes = {
+    productos: PropTypes.array.isRequired,
+    categorias: PropTypes.array.isRequired
+}
 export default SeccionesProducto;

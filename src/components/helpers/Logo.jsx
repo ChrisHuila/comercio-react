@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import ScrollLink from './ScrollLink';
+import PropTypes from "prop-types";
 
 const Logo = ({estilo}) => {
     return ( 
@@ -12,5 +13,7 @@ const Logo = ({estilo}) => {
         </Link>
      );
 }
- 
+Logo.propTypes = {
+    estilo: PropTypes.string
+}
 export default Logo;
