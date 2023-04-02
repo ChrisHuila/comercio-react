@@ -1,8 +1,11 @@
 
 
-#analizar el componente categoria
-#intersectionobserver colocar
-#useCallback
+#profile
+#header
+#barra
+#imagen
 
+#compras
+#organizar la informacion de compras
 
 # comercio-react

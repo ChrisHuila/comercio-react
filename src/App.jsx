@@ -41,12 +41,8 @@ function App() {
     {
       path: "/categoria/:nombrecategorias/:idcategoria",
       element: <Categorias />,
-    }, 
-    // {
-    //   path: "/product/:name/:id",
-    //   element: <ProductView />
-    // }  
-    
+    } 
+  
   ])
 
   

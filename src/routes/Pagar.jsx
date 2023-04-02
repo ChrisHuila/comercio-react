@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import ArticuloPagar from "../components/pagar/ArticuloPagar";
-import useCarrito from "../hooks/useCarrito";
 import { CarritoContext } from "../context/carritoContext";
+import useCarrito from "../hooks/useCarrito";
+import usePagar from "../hooks/usePagar";
 
 import formatoPrecio from "../components/helpers/FormatoPrecio";
 import ScrollLink from "../components/helpers/ScrollLink";
@@ -27,14 +28,16 @@ const style = {
   };
 
 const Pagar = () => {
+    
     //   State del modal 
     const [open, setOpen] = useState(false);
+  
  
     // Utiliza el hook useCarrito
     const {carrito, valortotal, actualizarCarrito, agregarNotificacion,guardarValorTotal } = useCarrito();
 
     // Utiliza el context
-    const {guardarMostrarCarrito} = useContext(CarritoContext)
+    const {guardarMostrarCarrito, guardarCarritoCompra} = useContext(CarritoContext)
     useEffect(() => {
         // Oculta carrito
         guardarMostrarCarrito(false); 
@@ -42,17 +45,24 @@ const Pagar = () => {
     // Se le quita 1 porque es su valor inicial
     let totalValor = parseInt(valortotal) - 1;
 
+    // Custom hook
+    const {comprarealizada} = usePagar(carrito, totalValor )
+
     const navigate = useNavigate();
-    
-    const compraConfirmada = () => {
+
+    const compraConfirmada =  () => {
         // Muestra modal de agradecimiento
         setOpen(true);
+        comprarealizada.fecha = new Date();
+        guardarCarritoCompra(comprarealizada)
+        ScrollLink();
+
         // Retorna a los valores iniciales
         actualizarCarrito([]);
         agregarNotificacion(1);
         guardarValorTotal(0);
-        ScrollLink();
-        // // Despues de 5 seg redirecciona
+      
+        // Despues de 5 seg redirecciona
         setTimeout(() => {
             navigate("/", { replace: true }); 
         }, 5000);
