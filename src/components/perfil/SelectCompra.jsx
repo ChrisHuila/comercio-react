@@ -17,7 +17,9 @@ const SelectCompra = ({compras, guardarFiltroCompra}) => {
         guardarFecha(fecha)
         if(fselect === ""){
             // Muestra el ultimo elemento en el array
-            guardarFSelect(fecha[fecha.length -1])
+            const ultimaCompra = fecha[fecha.length -1];
+            guardarFSelect(ultimaCompra)
+            guardarFiltroCompra(ultimaCompra)
         }
     }, [compras])
    // Convierte a la fecha local
