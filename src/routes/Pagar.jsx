@@ -53,8 +53,10 @@ const Pagar = () => {
     const compraConfirmada =  () => {
         // Muestra modal de agradecimiento
         setOpen(true);
+        // Crea el objeto de la compra
         comprarealizada.fecha = new Date();
         guardarCarritoCompra(comprarealizada)
+        console.log(comprarealizada);
         ScrollLink();
 
         // Retorna a los valores iniciales

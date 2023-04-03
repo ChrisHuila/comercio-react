@@ -1,25 +1,38 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
+import PerfilHeader from "../components/perfil/PerfilHeader";
+import SelectCompra from "../components/perfil/SelectCompra";
+import ArticuloPagar from "../components/pagar/ArticuloPagar";
+
 import { CarritoContext } from "../context/carritoContext";
+import {compras} from "./productos";
 import "./style/perfil.css";
 
 const Perfil = () => {
+   const [filtrocompra, guardarFiltroCompra] = useState("");
   const {usuario, id}  = useParams();
+  // state del context
   const {carritocompra} = useContext(CarritoContext);
+
     return (
       <div className="">
-        {console.log(carritocompra)}
-        <header className="perfil-header">
-          <div className="container">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg" alt="perfil-img" />
-            <h3 className="perfil-nombre">ursula lombardy</h3>
-          </div>
-        </header>
-        <main>
-          <p>hola</p>
+        <PerfilHeader />
+
+        <main className="perfil-main container">
+          <div className="perfil-contenedor sombra-dark ">
+
+            <SelectCompra compras={compras} guardarFiltroCompra={guardarFiltroCompra}/>
+            {compras.map((compras) => ( (new Date(compras.fecha)).toLocaleDateString() === filtrocompra &&
+              compras.compra.map((compra, i )=> (
+                <ArticuloPagar
+                  key={i}
+                  articulo={compra}
+                  />
+              ))
+            ))}
+         </div>
         </main>
       </div>
-  
       );
 }
  

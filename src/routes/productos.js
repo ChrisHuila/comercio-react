@@ -132,17 +132,82 @@ const productos = [
     },
 ];
 
-/*  
-* date
-1679077416590
-* id
-"GTwySwmoX9MHRf4KqIly"
-*  lastEdited
-1680028409421
-*  nombre
-"portatiles"
-*  userid
-"4VtdS4GIFyXfJJzyGGM83TVeyHw2"
- */
-
+export const compras = [
+    {
+        "compra": [
+            {
+                "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+                "nombre": "laptop",
+                "referencia": "rayzen 9",
+                "garantia": "1 año",
+                "date": 1679531136319,
+                "precio": "30000000",
+                "imagen": "1676561428650.jpg",
+                "categoria": "GTwySwmoX9MHRf4KqIly",
+                "color": "verde",
+                "sistemaoperativo": "linux",
+                "id": "HwOnNYodAJ6ah4ea9M0bassd",
+                "tipo": "portatil",
+                "marca": "asus",
+                "cantidad": 1
+            },
+            {
+                "date": 1679501299224,
+                "garantia": "1 año",
+                "color": "azul",
+                "sistemaoperativo": "android",
+                "referencia": "redmi note 11",
+                "id": "W35lUOSS4MBiLLBqsDyQ",
+                "tipo": "movil",
+                "nombre": "telefono",
+                "categoria": "b2tSLk9XlkVVvePYzH6f",
+                "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+                "precio": "600800",
+                "marca": "xiaomi",
+                "imagen": "1643991087927.jpg",
+                "cantidad": 1
+            }
+        ],
+        "total": 30600800,
+        "fecha": "2023-04-03T16:24:30.241Z"
+    },
+    {
+        "compra": [
+            {
+                "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+                "nombre": "laptop",
+                "referencia": "rayzen 9",
+                "garantia": "1 año",
+                "date": 1679531136319,
+                "precio": "30000000",
+                "imagen": "1676561428650.jpg",
+                "categoria": "GTwySwmoX9MHRf4KqIly",
+                "color": "verde",
+                "sistemaoperativo": "linux",
+                "id": "HwOnNYodAJ6ah4ea9M0bassd",
+                "tipo": "portatil",
+                "marca": "asus",
+                "cantidad": 1
+            },
+            {
+                "date": 1679501299224,
+                "garantia": "1 año",
+                "color": "azul",
+                "sistemaoperativo": "android",
+                "referencia": "redmi note 11",
+                "id": "W35lUOSS4MBiLLBqsDyQ",
+                "tipo": "movil",
+                "nombre": "telefono",
+                "categoria": "b2tSLk9XlkVVvePYzH6f",
+                "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+                "precio": "600800",
+                "marca": "xiaomi",
+                "imagen": "1643991087927.jpg",
+                "cantidad": 1
+            }
+        ],
+        "total": 30600800,
+        "fecha": "2023-04-05T16:24:30.241Z"
+    }
+] 
 export default productos;
