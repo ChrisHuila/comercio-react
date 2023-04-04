@@ -15,7 +15,7 @@ const Perfil = () => {
 
     return (
       <div className="perfil">
-        <PerfilHeader />
+        <PerfilHeader nombre={usuario} />
 
         <main className="perfil-main container">
           <div className="perfil-contenedor">

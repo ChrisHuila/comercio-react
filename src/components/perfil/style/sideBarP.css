@@ -1,0 +1,30 @@
+.sidebar-perfil{
+    margin: 4rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.sidebar-perfil-link{
+    text-decoration: none;
+    color: black;
+}
+.sidebar-perfil_lista{
+    text-transform: capitalize;
+    font-family: var(--textFont);
+    font-size: 1.3rem;
+    text-align: left;
+    padding: .5rem 0;
+    border-radius: 1rem;
+    transition: ease all;
+}
+.sidebar-perfil_lista i {
+    padding-right: .5rem;
+    font-size: 1.5rem
+}
+.sidebar-perfil_lista:hover {
+    background: hsla(240, 2%, 10%, 0.045);
+    cursor: pointer;
+}
+.sidebar-perfil_lista:hover i {
+    font-size: 1.6rem;
+}

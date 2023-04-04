@@ -1,18 +1,35 @@
-/* ===================Header perfil =======================*/
 .perfil {
     background: var(--blanco);
     height: 100vh
 }
+/* ===================Header perfil =======================*/
+
 .perfil-header{
     background-color: rgb(0, 187, 255);
     box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.61);
 }
-.perfil-header img {
+.perfil-header-container{
+    display: flex;
+   justify-content: space-between;
+   align-items: center; 
+}
+.perfil-header-cuenta {
+    display: flex;
+    align-items: end;
+    gap: 3rem;
+}
+.perfil-header-usuario {
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+    justify-content: center;
+}
+.perfil-header-usuario img {
     border-radius: 50%;
     height: 80px;
     width: 80px;
     max-width: 100%;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5); */
     border: 2px solid rgba(255, 255, 255, 0.5);
 }
 .perfil-nombre {
@@ -20,6 +37,7 @@
     text-transform: capitalize;
     font-weight: 400;
     color: white;
+    font-size: 1.4rem;
 }
 /* =========================perfil-main===================== */
 .perfil-main {
