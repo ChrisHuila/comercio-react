@@ -46,7 +46,7 @@ const Pagar = () => {
     let totalValor = parseInt(valortotal) - 1;
 
     // Custom hook
-    const {comprarealizada} = usePagar(carrito, totalValor )
+    const {comprarealizada} = usePagar(carrito, totalValor)
 
     const navigate = useNavigate();
 
@@ -56,7 +56,7 @@ const Pagar = () => {
         // Crea el objeto de la compra
         comprarealizada.fecha = new Date();
         guardarCarritoCompra(comprarealizada)
-        console.log(comprarealizada);
+        // console.log(comprarealizada);
         ScrollLink();
 
         // Retorna a los valores iniciales

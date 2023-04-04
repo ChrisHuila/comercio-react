@@ -3,15 +3,16 @@ import { useState, useEffect } from "react";
 const usePagar = (carrito, valortotal) => {
     const [comprarealizada, guardarCompra] = useState({
         compra: [],
-        total: ""
+        total: "",
+        usuarioid:"" 
     })
 
     useEffect(() => {
         guardarCompra({
             compra: [...carrito],
-            total:  valortotal
+            total:  valortotal,
+            usuarioid: "" 
         })
-       
     }, [])
     return {comprarealizada}
 }

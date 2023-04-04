@@ -22,6 +22,13 @@ const SelectCompra = ({compras, guardarFiltroCompra}) => {
             guardarFiltroCompra(ultimaCompra)
         }
     }, [compras])
+    
+    // Cuando cambia la fecha selecciona la guarda
+    useEffect(() => {
+        guardarFiltroCompra(fselect)
+
+    }, [fselect])
+
    // Convierte a la fecha local
    const fechaLocal = newDate => {
     return new Date(newDate).toLocaleDateString()
@@ -29,7 +36,6 @@ const SelectCompra = ({compras, guardarFiltroCompra}) => {
 
   const handleDate = e => {
     guardarFSelect(e.target.value)
-    guardarFiltroCompra(fselect)
   }
     return (
         <form>
@@ -44,6 +50,7 @@ const SelectCompra = ({compras, guardarFiltroCompra}) => {
                 ))}
                 
             </select>
+        
         </form>
     );
 }

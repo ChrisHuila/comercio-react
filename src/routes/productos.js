@@ -146,7 +146,7 @@ export const compras = [
                 "categoria": "GTwySwmoX9MHRf4KqIly",
                 "color": "verde",
                 "sistemaoperativo": "linux",
-                "id": "HwOnNYodAJ6ah4ea9M0bassd",
+                "id": "HwOnNYodAJ6ah4ea9M0b",
                 "tipo": "portatil",
                 "marca": "asus",
                 "cantidad": 1
@@ -169,10 +169,27 @@ export const compras = [
             }
         ],
         "total": 30600800,
-        "fecha": "2023-04-03T16:24:30.241Z"
+        "usuarioid": "",
+        "fecha": "2023-04-04T16:38:20.208Z"
     },
     {
         "compra": [
+            {
+                "precio": "2500000",
+                "garantia": "1 año",
+                "referencia": "Rayzen  A314-22-R58U",
+                "imagen": "1664226976753.jpg",
+                "marca": "acer",
+                "id": "S7qerTXULubFZZPcULYc",
+                "color": "gris",
+                "sistemaoperativo": "windows",
+                "tipo": "consumo",
+                "date": 1679500951541,
+                "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
+                "nombre": "laptop",
+                "categoria": "GTwySwmoX9MHRf4KqIly",
+                "cantidad": 1
+            },
             {
                 "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
                 "nombre": "laptop",
@@ -184,30 +201,15 @@ export const compras = [
                 "categoria": "GTwySwmoX9MHRf4KqIly",
                 "color": "verde",
                 "sistemaoperativo": "linux",
-                "id": "HwOnNYodAJ6ah4ea9M0bassd",
+                "id": "HwOnNYodAJ6ah4ea9M0b",
                 "tipo": "portatil",
                 "marca": "asus",
                 "cantidad": 1
-            },
-            {
-                "date": 1679501299224,
-                "garantia": "1 año",
-                "color": "azul",
-                "sistemaoperativo": "android",
-                "referencia": "redmi note 11",
-                "id": "W35lUOSS4MBiLLBqsDyQ",
-                "tipo": "movil",
-                "nombre": "telefono",
-                "categoria": "b2tSLk9XlkVVvePYzH6f",
-                "userid": "4VtdS4GIFyXfJJzyGGM83TVeyHw2",
-                "precio": "600800",
-                "marca": "xiaomi",
-                "imagen": "1643991087927.jpg",
-                "cantidad": 1
             }
         ],
-        "total": 30600800,
-        "fecha": "2023-04-05T16:24:30.241Z"
+        "total": 32500000,
+        "usuarioid": "",
+        "fecha": "2023-04-05T16:39:06.096Z"
     }
 ] 
 export default productos;

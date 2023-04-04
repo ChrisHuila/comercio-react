@@ -1,6 +1,11 @@
-/* Header perfil */
+/* ===================Header perfil =======================*/
+.perfil {
+    background: var(--blanco);
+    height: 100vh
+}
 .perfil-header{
     background-color: rgb(0, 187, 255);
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.61);
 }
 .perfil-header img {
     border-radius: 50%;
@@ -16,7 +21,7 @@
     font-weight: 400;
     color: white;
 }
-/* perfil-main */
+/* =========================perfil-main===================== */
 .perfil-main {
     min-height: 550px;
     display: flex;
@@ -25,11 +30,27 @@
     align-items: center; 
 }
 .perfil-contenedor {
-    background-color: var(--blanco);
-    max-width: 500px;
+    max-width: 700px;
     width: 95%;
-    border-radius: 10px;
     padding: 3rem 2rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
+}
+.perfil-contenedor h2 {
+    font-family: var(--textFont);
+    text-transform: capitalize;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--azulRey);
+}
+.perfil-contenedor form {
+    margin: 1rem 0;
+    text-align: right;
+}
+.perfil-contenedor form label {
+    margin-right: 0.5rem;
+    color: var(--azulRey);
+    font-family: var(--textFont);
+    font-weight: 700;
 }
