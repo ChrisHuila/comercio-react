@@ -8,6 +8,7 @@ const CarritoProvaider = (props) => {
     const [cambio , guardarCambio] = useState(false);
     const [ mensaje, agregarMensaje] = useState(false);
     const [mostrarcarrito, guardarMostrarCarrito] = useState(true);
+    const [carritocomprado,guardarCarritoCompra] = useState({})
     
 
     return ( 
@@ -21,6 +22,7 @@ const CarritoProvaider = (props) => {
                 guardarCambio,
                 agregarMensaje,
                 guardarMostrarCarrito,
+                guardarCarritoCompra
             }}
         >
 

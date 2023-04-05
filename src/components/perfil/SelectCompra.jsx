@@ -2,24 +2,12 @@ import { useState, useEffect  } from "react";
 
 const SelectCompra = ({compras, guardarFiltroCompra}) => {
     // State del componente
-    const [fechas, guardarFecha] = useState([]);
     const [fselect, guardarFSelect] = useState("");
-
  
     useEffect(() =>{
-        // Crea el array de fechas
-        const fecha = [];
-        for( let i = 0; i < compras.length; i++){
-           if(!fecha.includes(fechaLocal(compras[i].fecha))){
-            fecha.push(fechaLocal(compras[i].fecha))
-           } 
-        }
-        guardarFecha(fecha)
         if(fselect === ""){
-            // Muestra el ultimo elemento en el array
-            const ultimaCompra = fecha[fecha.length -1];
-            guardarFSelect(ultimaCompra)
-            guardarFiltroCompra(ultimaCompra)
+            guardarFSelect(fechaLocal (compras[0].fecha))
+            guardarFiltroCompra(fechaLocal (compras[0].fecha))
         }
     }, [compras])
     
@@ -45,10 +33,9 @@ const SelectCompra = ({compras, guardarFiltroCompra}) => {
             id="fecha" 
             value={fselect}
             >
-                {fechas.map(fecha => (
-                    <option key={fecha} value={fecha}>{fecha}</option>
-                ))}
-                
+                 {compras.map(compra => (
+                   <option key={compra.fecha} value={fechaLocal(compra.fecha)}>{fechaLocal(compra.fecha)}</option> 
+                 ))}
             </select>
         
         </form>
