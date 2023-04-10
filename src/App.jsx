@@ -9,6 +9,7 @@ import PrincipalCarrito from "./routes/PrincipalCarrito";
 import Pagar from "./routes/Pagar";
 import Perfil from "./routes/Perfil";
 import Categorias from "./routes/Categorias";
+import NotFound from "./routes/NotFound";
 
 
 function App() {
@@ -41,7 +42,11 @@ function App() {
     {
       path: "/categoria/:nombrecategorias/:idcategoria",
       element: <Categorias />,
-    } 
+    }, 
+    {
+      path: "/notfound",
+      element: <NotFound />,
+    }, 
   
   ])
 
