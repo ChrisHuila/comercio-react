@@ -4,26 +4,32 @@ import { Link } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Notificacion from "../components/helpers/Notificacion";
-import useCarrito from "../hooks/useCarrito";
 import PaginaCarrito from "../components/carrito/PaginaCarrito";
-import { CarritoContext } from "../context/carritoContext";
-import CarritoContextprin from "../context/carrito/carritoContext";
+import CarritoContext from "../context/carrito/carritoContext";
 import ScrollLink from "../components/helpers/ScrollLink";
-
+import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "../components/helpers/agregarLocalStorage";
 const PrincipalCarrito = () => {
-    // se toman los productos del carrito del custom hook
-    // carrito
-    const { valortotal, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
-
+   
     // useContext
-   const {guardarMostrarCarrito} = useContext(CarritoContext);
-   const {carrito} = useContext(CarritoContextprin);
+   const {carrito, limpiarCarrito, handleNotificacion, obtenerValorTotal} = useContext(CarritoContext);
 
     //    Oculta el carrito
-    useEffect(() => {
-        guardarMostrarCarrito(true);
+    // useEffect(() => {
+    //     guardarMostrarCarrito(true);
     
-    }, [])
+    // }, [])
+
+    const handleVaciarCarrito = () => {
+        // Valores iniciales
+        limpiarCarrito([])
+        handleNotificacion( 1 )
+        obtenerValorTotal(1)
+        // Limpiamos localStorage
+        agregaCarritoStorage([])
+        agregarNotificacionStorage(1)
+        agregarValorTotalStorage(1)
+
+    }
     return (
         <Fragment>
             <Header />
@@ -44,13 +50,6 @@ const PrincipalCarrito = () => {
                             <PaginaCarrito 
                             key={i}
                             articulo ={articulo}
-                            carrito = {carrito}
-                            valortotal={valortotal}
-                            notificacion={notificacion}
-                            actualizarCarrito={actualizarCarrito}
-                            eliminaProducto = {eliminaProducto}
-                            guardarValorTotal={guardarValorTotal}
-                            agregarNotificacion={agregarNotificacion}
                             />
                         ))}
                     </tbody>
@@ -70,7 +69,7 @@ const PrincipalCarrito = () => {
                     <button 
                     className="btn btn-primary mt-3" 
                     type="button"
-                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ), guardarValorTotal(1))}
+                    onClick={handleVaciarCarrito}
                     >Vaciar carrito
                     </button>
                 </div>

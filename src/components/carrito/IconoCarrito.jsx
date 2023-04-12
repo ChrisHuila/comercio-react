@@ -2,19 +2,26 @@ import {useContext} from "react";
 import { Link } from "react-router-dom";
 import Notificacion from "../helpers/Notificacion";
 
-import useCarrito from "../../hooks/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
 import ScrollLink from "../helpers/ScrollLink";
 import CarritoContext from "../../context/carrito/carritoContext";
-
+import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "../helpers/agregarLocalStorage";
 const IconoCarrito = () => {   
     
-    // Utiliza el hook useCarrito
-    // carrito, notificacion, 
-    const { eliminaProducto,  agregarNotificacion, guardarValorTotal} = useCarrito();
 
-    const {carrito, notificacion, limpiarCarrito, handleNotificacion} = useContext(CarritoContext);
+    const {carrito, notificacion, limpiarCarrito, handleNotificacion, obtenerValorTotal} = useContext(CarritoContext);
 
+    const handleVaciarCarrito = () => {
+        // Valores iniciales
+        limpiarCarrito([])
+        handleNotificacion( 1 )
+        obtenerValorTotal(1)
+        // Limpiamos localStorage
+        agregaCarritoStorage([])
+        agregarNotificacionStorage(1)
+        agregarValorTotalStorage(1)
+
+    }
     return (        
         <ul style={{listStyle: "none", margin: "0", padding: "0"}}>
             <li className="submenu">
@@ -67,8 +74,7 @@ const IconoCarrito = () => {
                                 <button 
                                     className="btn btn-primary " 
                                     type="button"
-                                    onClick={() => (limpiarCarrito([]), handleNotificacion( 1 ), 
-                                    guardarValorTotal(1))}
+                                    onClick={handleVaciarCarrito}
                                     >Vaciar Carrito
                                 </button>
                                 <Link 
