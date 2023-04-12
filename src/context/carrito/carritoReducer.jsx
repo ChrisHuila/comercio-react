@@ -1,6 +1,7 @@
 import {
     ACTUALIZAR_CARRITO,
-    MOSTRAR_NOTIFICACION
+    MOSTRAR_NOTIFICACION,
+    ELIMINA_PRODUCTO
 } from '../../types/index';
 
 export default (state, action) => {
@@ -15,6 +16,11 @@ export default (state, action) => {
             return{
                 ...state,
                 notificacioncarrito: false
+            }
+        case ELIMINA_PRODUCTO:
+            return{
+                ...state,
+                carrito: action.payload
             }
         default:
             return state;

@@ -5,13 +5,14 @@ import CarritoContextprinc from "../../context/carrito/carritoContext";
 const BotonAgregar = ({articulo, estilo}) => {
     const{cambio,guardarCambio, agregarCarrito, agregarMensaje} = useContext(CarritoContext); //se va a borrar
 
-    const {carrito, actualizarCarrito, ocultaNotificacion} = useContext(CarritoContextprinc);
+    const {carrito, actualizarCarrito, ocultaNotificacion, carritoPrueba} = useContext(CarritoContextprinc);
 
     const productoAgregado = () => {
         // Agrega la cantidad por defecto
         if(!articulo.cantidad){
             articulo.cantidad = 1;
         }
+
         // Valida si ya se encuentra en el carrito
         const existe = carrito.some(producto => producto.id === articulo.id)
         // Agrega el producto
@@ -34,6 +35,7 @@ const BotonAgregar = ({articulo, estilo}) => {
                     [...carrito, articulo]
                 )
             }
+            
         // Oculta la notificacion despues de 3 seg
         setTimeout(() => {
             ocultaNotificacion()

@@ -1,10 +1,11 @@
+import BotonEliminar from "../helpers/BotonEliminar";
 import formatoPrecio from "../helpers/FormatoPrecio";
 
 const ProductoCarrito = ({articulo, eliminaProducto}) => {
-    // Elimina el producto
-    const eliminarProducto = () => {
-        eliminaProducto(articulo);
-    } 
+    // // Elimina el producto
+    // const eliminarProducto = () => {
+    //     eliminaProducto(articulo);
+    // } 
     const url = `https://firebasestorage.googleapis.com/v0/b/ecommercereact-ccb1d.appspot.com/o/${articulo.imagen}?alt=media&token=fba7ec21-ca5e-4d2b-8cc3-2830309b446a`;
     return (
         <tr>
@@ -14,11 +15,14 @@ const ProductoCarrito = ({articulo, eliminaProducto}) => {
             <td>{articulo.cantidad}</td>
             
             <td>
-                <a 
+                {/* <a 
                 href="#!" 
                 className="borrar-curso"
                 onClick={eliminarProducto}
-                >X</a>
+                >X</a> */}
+                <BotonEliminar 
+                    producto={articulo}
+                />
             </td>    
         </tr>
       );
