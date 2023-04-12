@@ -1,14 +1,19 @@
+import {useContext} from "react";
 import { Link } from "react-router-dom";
 import Notificacion from "../helpers/Notificacion";
 
 import useCarrito from "../../hooks/useCarrito";
 import ProductoCarrito from "./ProductoCarrito";
 import ScrollLink from "../helpers/ScrollLink";
+import CarritoContext from "../../context/carrito/carritoContext";
 
 const IconoCarrito = () => {   
     
     // Utiliza el hook useCarrito
-    const {carrito, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
+    // carrito,
+    const { notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
+
+    const {carrito} = useContext(CarritoContext);
 
     return (        
         <ul style={{listStyle: "none", margin: "0", padding: "0"}}>

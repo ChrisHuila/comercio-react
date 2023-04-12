@@ -5,23 +5,16 @@ import Footer from '../components/layout/Footer';
 import SeccionesProducto from "../components/producto/SeccionesProducto";
 import Notificacion from '../components/helpers/Notificacion';
 import { CarritoContext } from '../context/carritoContext';
-
+import CarritoContextprin from '../context/carrito/carritoContext';
 import productos from './productos';
 import { categorias } from './productos';
 
 
 const Home  = () => {
-
-   const {mensaje, guardarMostrarCarrito} = useContext(CarritoContext);
-  
-   useEffect(() => {
-    // muestra carrito 
-    guardarMostrarCarrito(true);
-   }, [])
    
+   const {notificacioncarrito} = useContext(CarritoContextprin);
     return ( 
         <Fragment>
-       
             <Header />
             <Banner />
          
@@ -32,7 +25,7 @@ const Home  = () => {
             />
                
            </div>
-            {mensaje ? <Notificacion tipo='agregado' mensaje='Agregado al Carrito' />:null}
+            {notificacioncarrito ? <Notificacion tipo='agregado' mensaje='Agregado al Carrito' />:null}
             
            <Footer />
         

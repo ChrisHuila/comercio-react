@@ -5,7 +5,7 @@ import CarritoContextprinc from "../../context/carrito/carritoContext";
 const BotonAgregar = ({articulo, estilo}) => {
     const{cambio,guardarCambio, agregarCarrito, agregarMensaje} = useContext(CarritoContext); //se va a borrar
 
-    const {carrito, actualizarCarrito} = useContext(CarritoContextprinc);
+    const {carrito, actualizarCarrito, ocultaNotificacion} = useContext(CarritoContextprinc);
 
     const productoAgregado = () => {
         // Agrega la cantidad por defecto
@@ -17,12 +17,12 @@ const BotonAgregar = ({articulo, estilo}) => {
         // Agrega el producto
         if(existe){
             // Actualizamos la cantidad
-            const carritoActualizado  = carrito.map(articulo => {
-                    if(articulo.id === articulo.id){
-                        articulo.cantidad ++;
-                        return articulo;
+            const carritoActualizado  = carrito.map(producto => {
+                    if(producto.id === articulo.id){
+                        producto.cantidad ++;
+                        return producto;
                     }else{
-                        return articulo;
+                        return producto;
                     }
     
                 })
@@ -34,7 +34,13 @@ const BotonAgregar = ({articulo, estilo}) => {
                     [...carrito, articulo]
                 )
             }
-        
+        // Oculta la notificacion despues de 3 seg
+        setTimeout(() => {
+            ocultaNotificacion()
+            
+        }, 3000);
+
+
         // // Se van a borrar de aqui para abajo
         // agregarCarrito(articulo)
         // // Indica que se ha agregado un producto
