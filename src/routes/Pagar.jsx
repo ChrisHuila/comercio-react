@@ -13,6 +13,7 @@ import "./style/pagar.css";
 
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import CarritoContextprin from "../context/carrito/carritoContext";
 
 const style = {
     position: 'absolute',
@@ -31,13 +32,15 @@ const Pagar = () => {
     
     //   State del modal 
     const [open, setOpen] = useState(false);
-  
- 
     // Utiliza el hook useCarrito
-    const {carrito, valortotal, actualizarCarrito, agregarNotificacion,guardarValorTotal } = useCarrito();
+    // valortotal,carrito,
+    const {  actualizarCarrito, agregarNotificacion,guardarValorTotal } = useCarrito();
 
     // Utiliza el context
     const {guardarMostrarCarrito, guardarCarritoCompra} = useContext(CarritoContext)
+    const {carrito, valortotal} = useContext(CarritoContextprin)
+
+
     useEffect(() => {
         // Oculta carrito
         guardarMostrarCarrito(false); 

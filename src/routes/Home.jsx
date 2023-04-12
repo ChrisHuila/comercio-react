@@ -12,11 +12,13 @@ import { categorias } from './productos';
 
 const Home  = () => {
    
+   const {guardarMostrarCarrito} = useContext(CarritoContext);
    const {mensaje, obtenerDatosStorage} = useContext(CarritoContextprin);
 
    useEffect(() => {
       // Obtiene los datos de local storage
       obtenerDatosStorage()
+      guardarMostrarCarrito(true)
    }, [])
     return ( 
         <Fragment>
