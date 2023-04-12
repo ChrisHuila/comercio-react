@@ -128,7 +128,7 @@ const useCarrito = () => {
             // Se agrega al carrito
             carritoAgregar();
            
-            }
+        }
 
         muestraProducto();
         // console.log('hola desde effect ');
