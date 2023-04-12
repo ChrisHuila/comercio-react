@@ -12,7 +12,12 @@ import { categorias } from './productos';
 
 const Home  = () => {
    
-   const {notificacioncarrito} = useContext(CarritoContextprin);
+   const {mensaje, obtenerDatosStorage} = useContext(CarritoContextprin);
+
+   useEffect(() => {
+      // Obtiene los datos de local storage
+      obtenerDatosStorage()
+   }, [])
     return ( 
         <Fragment>
             <Header />
@@ -25,7 +30,7 @@ const Home  = () => {
             />
                
            </div>
-            {notificacioncarrito ? <Notificacion tipo='agregado' mensaje='Agregado al Carrito' />:null}
+            {mensaje ? <Notificacion tipo='agregado' mensaje='Agregado al Carrito' />:null}
             
            <Footer />
         

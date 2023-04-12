@@ -1,8 +1,9 @@
 import {useContext} from "react"
 import CarritoContext from "../../context/carrito/carritoContext";
+import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "./agregarLocalStorage";
 
 const BotonEliminar = ({producto}) => {
-    const {carrito, eliminaProducto} = useContext(CarritoContext);
+    const {carrito, notificacion, valortotal, eliminaProducto, handleNotificacion, obtenerValorTotal} = useContext(CarritoContext);
       // Elimina el producto
       const eliminarProducto = () => {
 
@@ -19,11 +20,25 @@ const BotonEliminar = ({producto}) => {
 
             })
             eliminaProducto(cantidadCarrito);
+            // Actualiza carrito en localStorage
+            agregaCarritoStorage(cantidadCarrito)
         }else if(producto.cantidad === 1){
             // Elimina del carrito
             const carritoActualizado  = carrito.filter(articulo => articulo.id !== producto.id);
             eliminaProducto(carritoActualizado);
+            // Actualiza carrito en localStorage
+            agregaCarritoStorage(carritoActualizado)
         }
+
+        // actualiza notificacion
+        handleNotificacion(notificacion - 1);
+        // Actualiza notificacion en localStorage
+        agregarNotificacionStorage(notificacion - 1)
+
+         // valor total de la compra
+         obtenerValorTotal(valortotal - parseInt(producto.precio));
+         // Actualiza valor total en localStorage
+         agregarValorTotalStorage(valortotal - parseInt(producto.precio))
     } 
     return (
         <a 

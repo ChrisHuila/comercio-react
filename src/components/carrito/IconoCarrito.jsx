@@ -10,10 +10,10 @@ import CarritoContext from "../../context/carrito/carritoContext";
 const IconoCarrito = () => {   
     
     // Utiliza el hook useCarrito
-    // carrito,
-    const { notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
+    // carrito, notificacion, 
+    const { eliminaProducto,  agregarNotificacion, guardarValorTotal} = useCarrito();
 
-    const {carrito} = useContext(CarritoContext);
+    const {carrito, notificacion, limpiarCarrito, handleNotificacion} = useContext(CarritoContext);
 
     return (        
         <ul style={{listStyle: "none", margin: "0", padding: "0"}}>
@@ -50,7 +50,6 @@ const IconoCarrito = () => {
                                 <ProductoCarrito 
                                 key={articulo.id}
                                 articulo ={articulo}
-                                eliminaProducto = {eliminaProducto}
                                 />
                             ))}
                         </tbody>
@@ -68,7 +67,8 @@ const IconoCarrito = () => {
                                 <button 
                                     className="btn btn-primary " 
                                     type="button"
-                                    onClick={() => (actualizarCarrito([]), agregarNotificacion( 1 ), guardarValorTotal(1))}
+                                    onClick={() => (limpiarCarrito([]), handleNotificacion( 1 ), 
+                                    guardarValorTotal(1))}
                                     >Vaciar Carrito
                                 </button>
                                 <Link 

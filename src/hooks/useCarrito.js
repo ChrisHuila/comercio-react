@@ -116,7 +116,7 @@ const useCarrito = () => {
         const muestraProducto = () => {
 
             // Agrega a localStorage
-            agregaLocalStorage();
+            // agregaLocalStorage();
 
             // valida que se le haya dado agregar a un producto
             if(Object.entries(producto).length === 0) return;

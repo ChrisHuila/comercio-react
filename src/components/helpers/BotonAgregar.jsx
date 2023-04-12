@@ -1,18 +1,16 @@
 import { useContext } from "react"
-import { CarritoContext } from "../../context/carritoContext" //este se va a borrar
-import CarritoContextprinc from "../../context/carrito/carritoContext";
+import CarritoContext from "../../context/carrito/carritoContext";
+import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "./agregarLocalStorage";
 
 const BotonAgregar = ({articulo, estilo}) => {
-    const{cambio,guardarCambio, agregarCarrito, agregarMensaje} = useContext(CarritoContext); //se va a borrar
 
-    const {carrito, actualizarCarrito, ocultaNotificacion, carritoPrueba} = useContext(CarritoContextprinc);
+    const {carrito, notificacion, valortotal ,actualizarCarrito, ocultamensaje, handleNotificacion, obtenerValorTotal } = useContext(CarritoContext);
 
     const productoAgregado = () => {
         // Agrega la cantidad por defecto
         if(!articulo.cantidad){
             articulo.cantidad = 1;
         }
-
         // Valida si ya se encuentra en el carrito
         const existe = carrito.some(producto => producto.id === articulo.id)
         // Agrega el producto
@@ -27,33 +25,34 @@ const BotonAgregar = ({articulo, estilo}) => {
                     }
     
                 })
+                // Almacena el valor en el carrito
                 actualizarCarrito(carritoActualizado);
-    
+                // Actualiza carrito en localStorage
+                agregaCarritoStorage(carritoActualizado)
             }else {
                 // agregamos el articulo
                 actualizarCarrito(
                     [...carrito, articulo]
                 )
+                // Actualiza carrito en localStorage
+                agregaCarritoStorage([...carrito, articulo])
             }
-            
-        // Oculta la notificacion despues de 3 seg
-        setTimeout(() => {
-            ocultaNotificacion()
-            
-        }, 3000);
+            // Muestra la notificacion
+            handleNotificacion(notificacion + 1)
+            // Actualiza notificacion en localStorage
+            agregarNotificacionStorage(notificacion + 1)
+            // Oculta el mensaje despues de 3 seg
 
+            // valor total de la compra
+            obtenerValorTotal(valortotal + parseInt(articulo.precio));
+            // Actualiza valor total en localStorage
+            agregarValorTotalStorage(valortotal + parseInt(articulo.precio))
 
-        // // Se van a borrar de aqui para abajo
-        // agregarCarrito(articulo)
-        // // Indica que se ha agregado un producto
-        // guardarCambio(!cambio);
-        // // Muestra mensaje agregado
-        // agregarMensaje(true);
+            setTimeout(() => {
+                ocultamensaje()
+                
+            }, 3000);
 
-        // setTimeout(() => {
-        //     // Despues de 3seg lo oculta
-        //     agregarMensaje(false);
-        // },3000)
     }
    
     return (
