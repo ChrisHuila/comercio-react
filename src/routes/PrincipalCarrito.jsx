@@ -7,14 +7,17 @@ import Notificacion from "../components/helpers/Notificacion";
 import useCarrito from "../hooks/useCarrito";
 import PaginaCarrito from "../components/carrito/PaginaCarrito";
 import { CarritoContext } from "../context/carritoContext";
+import CarritoContextprin from "../context/carrito/carritoContext";
 import ScrollLink from "../components/helpers/ScrollLink";
 
 const PrincipalCarrito = () => {
     // se toman los productos del carrito del custom hook
-    const {carrito, valortotal, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
+    // carrito
+    const { valortotal, notificacion, eliminaProducto, actualizarCarrito, agregarNotificacion, guardarValorTotal} = useCarrito();
 
     // useContext
    const {guardarMostrarCarrito} = useContext(CarritoContext);
+   const {carrito} = useContext(CarritoContextprin);
 
     //    Oculta el carrito
     useEffect(() => {

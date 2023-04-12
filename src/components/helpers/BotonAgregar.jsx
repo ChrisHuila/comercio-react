@@ -1,8 +1,7 @@
-import { useContext } from "react"
+import { Fragment, useContext } from "react"
 import CarritoContext from "../../context/carrito/carritoContext";
 import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "./agregarLocalStorage";
-
-const BotonAgregar = ({articulo, estilo}) => {
+const BotonAgregar = ({articulo, estilo, contador}) => {
 
     const {carrito, notificacion, valortotal ,actualizarCarrito, ocultamensaje, handleNotificacion, obtenerValorTotal } = useContext(CarritoContext);
 
@@ -11,6 +10,7 @@ const BotonAgregar = ({articulo, estilo}) => {
         if(!articulo.cantidad){
             articulo.cantidad = 1;
         }
+       
         // Valida si ya se encuentra en el carrito
         const existe = carrito.some(producto => producto.id === articulo.id)
         // Agrega el producto
@@ -54,14 +54,29 @@ const BotonAgregar = ({articulo, estilo}) => {
             }, 3000);
 
     }
-   
+ 
     return (
-        <button 
-            className={estilo}
-            onClick={productoAgregado}
-        >
-            <i className="bi bi-cart4"></i> Agregar
-        </button> 
+        <Fragment>
+            {!contador 
+            ? 
+                <button 
+                    className={estilo}
+                    onClick={productoAgregado}
+                >
+                    <i className="bi bi-cart4"></i> Agregar
+                </button> 
+            :        
+                <a 
+                className="page-link" 
+                href="#!" 
+                onClick={productoAgregado} 
+                aria-label="Previous"
+                >
+                    <span aria-hidden="true">&raquo;</span>
+                </a>  
+            }
+
+        </Fragment>
       );
 }
  

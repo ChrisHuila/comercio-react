@@ -1,8 +1,8 @@
-import {useContext} from "react"
+import {Fragment, useContext} from "react"
 import CarritoContext from "../../context/carrito/carritoContext";
 import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "./agregarLocalStorage";
 
-const BotonEliminar = ({producto}) => {
+const BotonEliminar = ({producto, contador}) => {
     const {carrito, notificacion, valortotal, eliminaProducto, handleNotificacion, obtenerValorTotal} = useContext(CarritoContext);
       // Elimina el producto
       const eliminarProducto = () => {
@@ -41,11 +41,26 @@ const BotonEliminar = ({producto}) => {
          agregarValorTotalStorage(valortotal - parseInt(producto.precio))
     } 
     return (
-        <a 
-        href="#!" 
-        className="borrar-curso"
-        onClick={eliminarProducto}
-        >X</a>
+        <Fragment>
+            {!contador 
+            ?
+                <a 
+                href="#!" 
+                className="borrar-curso"
+                onClick={eliminarProducto}
+                >X</a>
+            : 
+                <a 
+                className="page-link" 
+                href="#!" 
+                onClick={eliminarProducto} 
+                aria-label="Previous"
+                >
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            }
+
+        </Fragment>
       );
 }
  

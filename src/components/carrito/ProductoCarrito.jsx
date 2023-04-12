@@ -14,6 +14,7 @@ const ProductoCarrito = ({articulo}) => {
             <td>
                 <BotonEliminar 
                     producto={articulo}
+                    contador={false}
                 />
             </td>    
         </tr>

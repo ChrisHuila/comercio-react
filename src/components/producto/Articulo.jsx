@@ -67,6 +67,7 @@ const Articulo = ({articulo}) => {
                             <BotonAgregar 
                                 articulo={articulo}
                                 estilo="btn btn-outline-secondary btn-sm"
+                                contador={false}
                             />
 
                             <Link to={`/Producto/${articulo.nombre}/${articulo.id}`} className='enlace-cuenta'>
