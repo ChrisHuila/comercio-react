@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import PerfilHeader from "../components/perfil/PerfilHeader";
 import SelectCompra from "../components/perfil/SelectCompra";
 import ArticuloComprado from "../components/perfil/ArticuloComprado";
-import formatoPrecio from "../components/helpers/FormatoPrecio";
 import {compras} from "./productos";
 import "./style/perfil.css";
 

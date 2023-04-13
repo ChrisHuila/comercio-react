@@ -51,8 +51,7 @@ const Pagar = () => {
         // Crea el objeto de la compra
         comprarealizada.fecha = new Date();
         productosComprados(comprarealizada)
-        // guardarCarritoCompra(comprarealizada)
-        // console.log(comprarealizada);
+        //Al cambiar de pagina situa en la parte de arriba    
         ScrollLink();
 
         // Retorna a los valores iniciales

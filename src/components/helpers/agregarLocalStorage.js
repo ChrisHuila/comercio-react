@@ -24,27 +24,6 @@ export const localStorageInicial = () => {
     return storageInicial
 }
 
-const agregaLocalStorage = () => {
-    // Valida productos
-    if(productosIniciales){
-        localStorage.setItem('productos', JSON.stringify(carrito));
-    }else{
-        localStorage.setItem('productos', JSON.stringify([]));
-    }
-    // Valida notificaciones 
-    if(notificacionesIniciales){
-        localStorage.setItem('notificaciones', JSON.stringify(notificacion));
-    }else{
-        localStorage.setItem('notificaciones', JSON.stringify(1));
-    }
-
-    // Valida valor total 
-    if(valorTotalInicial){
-        localStorage.setItem('valortotal', JSON.stringify(valortotal));
-    }else{
-        localStorage.setItem('valortotal', JSON.stringify(1));
-    }
-}
 
 export const agregaCarritoStorage = carrito => {
     localStorage.setItem('productos', JSON.stringify(carrito));

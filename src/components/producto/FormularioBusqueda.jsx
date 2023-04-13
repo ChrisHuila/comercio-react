@@ -8,10 +8,6 @@ const FormularioBusqueda = () => {
                 </div> 
 
                 <div className="form-div-busqueda ">
-                    {/* <input 
-                    type="submit" className="bton bton--busqueda"
-                    value='Buscar'
-                     /> */}
                      <button
                         type="submit" className="bton bton--busqueda"
                      >
