@@ -5,7 +5,8 @@ import Notificacion from "../helpers/Notificacion";
 import ProductoCarrito from "./ProductoCarrito";
 import ScrollLink from "../helpers/ScrollLink";
 import CarritoContext from "../../context/carrito/carritoContext";
-import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "../helpers/agregarLocalStorage";
+import limpiaLocalStorage from "../helpers/limpiaLStorage";
+
 const IconoCarrito = () => {   
     
 
@@ -17,9 +18,7 @@ const IconoCarrito = () => {
         handleNotificacion( 1 )
         obtenerValorTotal(1)
         // Limpiamos localStorage
-        agregaCarritoStorage([])
-        agregarNotificacionStorage(1)
-        agregarValorTotalStorage(1)
+        limpiaLocalStorage()
 
     }
     return (        

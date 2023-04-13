@@ -5,19 +5,18 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import productos, {categorias} from "./productos";
 import Categoria from "../components/categorias/categoria";
-import { CarritoContext } from "../context/carritoContext";
-
+import CarritoContext from "../context/carrito/carritoContext";
 import "../components/categorias/style/categoria.css";
 
 const Categorias = () => {
   // toma los parametros de la categoria
   const {nombrecategorias: categoria, idcategoria} =useParams();
   // toma la funcion del context
-  const { guardarMostrarCarrito} = useContext(CarritoContext)
+  const { handleCarrito} = useContext(CarritoContext)
 
   useEffect(() => {
     // Muestra el carrito si no esta visible
-    guardarMostrarCarrito(true);
+    handleCarrito(true);
 
   },[])
 

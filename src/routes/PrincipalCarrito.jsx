@@ -7,17 +7,16 @@ import Notificacion from "../components/helpers/Notificacion";
 import PaginaCarrito from "../components/carrito/PaginaCarrito";
 import CarritoContext from "../context/carrito/carritoContext";
 import ScrollLink from "../components/helpers/ScrollLink";
-import { agregaCarritoStorage, agregarNotificacionStorage, agregarValorTotalStorage } from "../components/helpers/agregarLocalStorage";
+import limpiaLocalStorage from "../components/helpers/limpiaLStorage";
 const PrincipalCarrito = () => {
    
     // useContext
-   const {carrito, limpiarCarrito, handleNotificacion, obtenerValorTotal} = useContext(CarritoContext);
+   const {carrito, limpiarCarrito, handleNotificacion, obtenerValorTotal, handleCarrito} = useContext(CarritoContext);
 
     //    Oculta el carrito
-    // useEffect(() => {
-    //     guardarMostrarCarrito(true);
-    
-    // }, [])
+    useEffect(() => {
+        handleCarrito(true);
+    }, [])
 
     const handleVaciarCarrito = () => {
         // Valores iniciales
@@ -25,11 +24,9 @@ const PrincipalCarrito = () => {
         handleNotificacion( 1 )
         obtenerValorTotal(1)
         // Limpiamos localStorage
-        agregaCarritoStorage([])
-        agregarNotificacionStorage(1)
-        agregarValorTotalStorage(1)
-
+        limpiaLocalStorage()
     }
+
     return (
         <Fragment>
             <Header />

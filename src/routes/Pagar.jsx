@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import ArticuloPagar from "../components/pagar/ArticuloPagar";
-import { CarritoContext } from "../context/carritoContext";
-import useCarrito from "../hooks/useCarrito";
 import usePagar from "../hooks/usePagar";
 
 import formatoPrecio from "../components/helpers/FormatoPrecio";
@@ -14,7 +12,7 @@ import "./style/pagar.css";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import CarritoContextprin from "../context/carrito/carritoContext";
-
+import limpiaLocalStorage from "../components/helpers/limpiaLStorage";
 const style = {
     position: 'absolute',
     top: '45%',
@@ -32,41 +30,39 @@ const Pagar = () => {
     
     //   State del modal 
     const [open, setOpen] = useState(false);
-    // Utiliza el hook useCarrito
-    // valortotal,carrito,
-    const {  actualizarCarrito, agregarNotificacion,guardarValorTotal } = useCarrito();
 
-    // Utiliza el context
-    const {guardarMostrarCarrito, guardarCarritoCompra} = useContext(CarritoContext)
-    const {carrito, valortotal} = useContext(CarritoContextprin)
+    // Utiliza el reducer
+    const {carrito, valortotal, limpiarCarrito, handleNotificacion, obtenerValorTotal, handleCarrito, productosComprados} = useContext(CarritoContextprin)
 
+    // Se le quita 1 porque es su valor inicial
+    let totalValor = parseInt(valortotal) - 1;
+    // Custom hook
+    const {comprarealizada} = usePagar(carrito, totalValor)
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Oculta carrito
-        guardarMostrarCarrito(false); 
+        handleCarrito(false) 
     },[])
-    // Se le quita 1 porque es su valor inicial
-    let totalValor = parseInt(valortotal) - 1;
-
-    // Custom hook
-    const {comprarealizada} = usePagar(carrito, totalValor)
-
-    const navigate = useNavigate();
-
+    
     const compraConfirmada =  () => {
         // Muestra modal de agradecimiento
         setOpen(true);
         // Crea el objeto de la compra
         comprarealizada.fecha = new Date();
-        guardarCarritoCompra(comprarealizada)
+        productosComprados(comprarealizada)
+        // guardarCarritoCompra(comprarealizada)
         // console.log(comprarealizada);
         ScrollLink();
 
         // Retorna a los valores iniciales
-        actualizarCarrito([]);
-        agregarNotificacion(1);
-        guardarValorTotal(0);
-      
+        limpiarCarrito([])
+        handleNotificacion( 1 )
+        obtenerValorTotal(1)
+
+        // Limpiamos localStorage
+        limpiaLocalStorage()
+
         // Despues de 5 seg redirecciona
         setTimeout(() => {
             navigate("/", { replace: true }); 

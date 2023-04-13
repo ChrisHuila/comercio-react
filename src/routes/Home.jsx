@@ -4,7 +4,6 @@ import Banner from '../components/layout/Banner';
 import Footer from '../components/layout/Footer';
 import SeccionesProducto from "../components/producto/SeccionesProducto";
 import Notificacion from '../components/helpers/Notificacion';
-import { CarritoContext } from '../context/carritoContext';
 import CarritoContextprin from '../context/carrito/carritoContext';
 import productos from './productos';
 import { categorias } from './productos';
@@ -12,13 +11,12 @@ import { categorias } from './productos';
 
 const Home  = () => {
    
-   const {guardarMostrarCarrito} = useContext(CarritoContext);
-   const {mensaje, obtenerDatosStorage} = useContext(CarritoContextprin);
+   const {mensaje, obtenerDatosStorage, handleCarrito} = useContext(CarritoContextprin);
 
    useEffect(() => {
       // Obtiene los datos de local storage
       obtenerDatosStorage()
-      guardarMostrarCarrito(true)
+      handleCarrito(true)
    }, [])
     return ( 
         <Fragment>

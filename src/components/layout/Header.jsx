@@ -6,8 +6,7 @@ import IconoCarrito from "../carrito/IconoCarrito";
 import SideBar from './SideBar';
 import Logo from '../helpers/Logo';
 import FormularioBusqueda from "../producto/FormularioBusqueda";
-import { CarritoContext } from '../../context/carritoContext';
-
+import CarritoContextprin from '../../context/carrito/carritoContext';
 import "./style/header.css";
 
 const Header = () => {
@@ -20,7 +19,8 @@ const consigueAltura = () => {
   const [hight, guardarHight] = useState(consigueAltura);
   
 // Usecontext
-const {mostrarcarrito} = useContext(CarritoContext);
+// const {mostrarcarrito} = useContext(CarritoContext);
+const {mostrarcarrito} = useContext(CarritoContextprin);
 
   // Dependiendo al scroll muestra header fijo
   useEffect(() => {

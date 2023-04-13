@@ -2,13 +2,15 @@ import { useReducer } from "react"
 import  carritoContext  from "./carritoContext"
 import carritoReducer from "./carritoReducer"
 import {
-    ACTUALIZAR_CARRITO,
+    NUEVA_COMPRA,
     MOSTRAR_MENSAJE,
     ELIMINA_PRODUCTO,
     ACTIVA_NOTIFICACION,
     LIMPIAR_CARRITO,
     OBTENER_STORAGE,
-    OBTENER_VALORTOTAL
+    OBTENER_VALORTOTAL,
+    MOSTRAR_CARRITO,
+    OBJETO_COMPRA
 } from '../../types/index';
 import { localStorageInicial } from "../../components/helpers/agregarLocalStorage";
 
@@ -19,7 +21,9 @@ const CarritoState = props=> {
         carrito: [],
         mensaje: false,
         notificacion: 1,
-        valortotal: 1
+        valortotal: 1,
+        mostrarcarrito: true,
+        compra: {}
     }
 
     // dispatch para ejecutar las acciones
@@ -28,7 +32,7 @@ const CarritoState = props=> {
     // funciones
     const actualizarCarrito = carrito => {
         dispatch({
-           type: ACTUALIZAR_CARRITO,
+           type: NUEVA_COMPRA,
            payload: carrito
         })
     }
@@ -67,6 +71,18 @@ const CarritoState = props=> {
         payload: valortotal
     })
    }
+   const handleCarrito = opcion  => {
+        dispatch({
+            type: MOSTRAR_CARRITO,
+            payload: opcion
+        })
+   }
+   const productosComprados = productos => {
+        dispatch({
+            type:OBJETO_COMPRA,
+            payload: productos
+        })
+   }
     return(
         <carritoContext.Provider
             value={{
@@ -74,13 +90,17 @@ const CarritoState = props=> {
                 mensaje: state.mensaje,
                 notificacion: state.notificacion,
                 valortotal: state.valortotal,
+                mostrarcarrito: state.mostrarcarrito,
+                compra: state.compra,
                 actualizarCarrito,
                 ocultamensaje,
                 eliminaProducto,
                 handleNotificacion,
                 limpiarCarrito,
                 obtenerDatosStorage,
-                obtenerValorTotal
+                obtenerValorTotal,
+                handleCarrito,
+                productosComprados
             }}
         >
             {props.children}

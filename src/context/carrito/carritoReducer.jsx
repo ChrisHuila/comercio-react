@@ -1,20 +1,23 @@
 import {
-    ACTUALIZAR_CARRITO,
+    NUEVA_COMPRA,
     MOSTRAR_MENSAJE,
     ELIMINA_PRODUCTO,
     ACTIVA_NOTIFICACION,
     LIMPIAR_CARRITO,
     OBTENER_STORAGE,
-    OBTENER_VALORTOTAL
+    OBTENER_VALORTOTAL,
+    MOSTRAR_CARRITO,
+    OBJETO_COMPRA
 } from '../../types/index';
 
 export default (state, action) => {
     switch(action.type){
-        case ACTUALIZAR_CARRITO: 
+        case NUEVA_COMPRA: 
             return{
                 ...state,
                carrito: action.payload,
-               mensaje: true
+               mensaje: true,
+               compra: {}
             }
         case MOSTRAR_MENSAJE:
             return{
@@ -47,6 +50,16 @@ export default (state, action) => {
             return{
                 ...state,
                 valortotal:action.payload
+            }
+        case MOSTRAR_CARRITO:
+            return{
+                ...state,
+                mostrarcarrito: action.payload
+            }
+        case OBJETO_COMPRA:
+            return{
+                ...state,
+                compra: action.payload
             }
         default:
             return state;
